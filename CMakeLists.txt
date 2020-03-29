@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.15 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.8 FATAL_ERROR)
 
 project(NULS)
 
@@ -30,6 +30,7 @@ ExternalProject_Add(
 )
 ExternalProject_Get_property(pcg SOURCE_DIR)
 set(PCG_INCLUDE_DIR ${SOURCE_DIR}/include)
+#message("${PCG_INCLUDE_DIR}")
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
@@ -46,6 +47,8 @@ target_include_directories(NULS
         $<INSTALL_INTERFACE:include>
     PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/src
+        ${JSON_INCLUDE_DIR}
+        ${PCG_INCLUDE_DIR}
 )
 
-add_subdirectory(tests)
+#add_subdirectory(tests)

@@ -30,5 +30,7 @@
 *.exe
 *.out
 *.app
-
+# build
 build/
+# For Mac OS
+.DS_Store 

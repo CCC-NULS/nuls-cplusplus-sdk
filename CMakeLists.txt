@@ -32,10 +32,23 @@ ExternalProject_Get_property(pcg SOURCE_DIR)
 set(PCG_INCLUDE_DIR ${SOURCE_DIR}/include)
 #message("${PCG_INCLUDE_DIR}")
 
+ExternalProject_Add(
+    secp256k1
+    PREFIX "secp256k1"
+    URL https://github.com/libbitcoin/secp256k1/archive/v0.1.0.13.zip
+    #URL_HASH SHA256=de46a88aad4dfe54ef53f66beba56fd0ab3e94aaaa9860cd828b3f1daee13aaf
+    CONFIGURE_COMMAND ""
+    BUILD_COMMAND ""
+    INSTALL_COMMAND ""
+)
+ExternalProject_Get_property(secp256k1 SOURCE_DIR)
+set(SECP256K1_INCLUDE_DIR ${SOURCE_DIR}/include)
+
+
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 
-file(GLOB_RECURSE sources src/crypto/*.c src/crypto/*.h src/*.cpp src/*.h)
+file(GLOB_RECURSE sources src/crypto/*.c src/crypto/*.h src/*.cpp src/*.h include/*.hpp)
 add_library(NULS ${sources} )
 
 target_link_libraries(NULS PRIVATE Boost::boost)
@@ -49,6 +62,7 @@ target_include_directories(NULS
         ${CMAKE_CURRENT_SOURCE_DIR}/src
         ${JSON_INCLUDE_DIR}
         ${PCG_INCLUDE_DIR}
+        ${SECP256K1_INCLUDE_DIR}
 )
 
 #add_subdirectory(tests)

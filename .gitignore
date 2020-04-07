@@ -34,3 +34,5 @@
 build/
 # For Mac OS
 .DS_Store 
+#for vscode
+.vscode

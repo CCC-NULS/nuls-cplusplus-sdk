@@ -1,5 +1,5 @@
 ﻿/**
- * Copyright (c) 2011-2019 libnuls developers (see AUTHORS)
+ * Copyright (c) 2020 libnuls developers (see AUTHORS)
  *
  * This file is part of libnuls.
  *

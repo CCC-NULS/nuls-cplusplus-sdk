@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2011-2019 libbitcoin developers (see AUTHORS)
+ * Copyright (c) 2011-2019 libnuls developers (see AUTHORS)
  *
- * This file is part of libbitcoin.
+ * This file is part of libnuls.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -16,13 +16,13 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include <bitcoin/system/utility/string.hpp>
+#include <nuls/system/utility/string.hpp>
 
 #include <string>
 #include <vector>
 #include <boost/algorithm/string.hpp>
 
-namespace libbitcoin {
+namespace libnuls {
 namespace system {
 
 std::string join(const string_list& words, const std::string& delimiter)
@@ -51,4 +51,4 @@ string_list split(const std::string& sentence, const std::string& delimiter,
 }
 
 } // namespace system
-} // namespace libbitcoin
+} // namespace libnuls

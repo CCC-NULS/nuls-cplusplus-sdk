@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2011-2019 libbitcoin developers (see AUTHORS)
+ * Copyright (c) 2011-2019 libnuls developers (see AUTHORS)
  *
- * This file is part of libbitcoin.
+ * This file is part of libnuls.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -19,8 +19,8 @@
 
 // Sponsored in part by Digital Contract Design, LLC
 
-#ifndef LIBBITCOIN_SYSTEM_TEST_SIPHASH_HPP
-#define LIBBITCOIN_SYSTEM_TEST_SIPHASH_HPP
+#ifndef LIBNULS_SYSTEM_TEST_SIPHASH_HPP
+#define LIBNULS_SYSTEM_TEST_SIPHASH_HPP
 
 #include <string>
 #include <vector>

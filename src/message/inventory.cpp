@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2011-2019 libbitcoin developers (see AUTHORS)
+ * Copyright (c) 2011-2019 libnuls developers (see AUTHORS)
  *
- * This file is part of libbitcoin.
+ * This file is part of libnuls.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -16,22 +16,22 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include <bitcoin/system/message/inventory.hpp>
+#include <nuls/system/message/inventory.hpp>
 
 #include <algorithm>
 #include <initializer_list>
-#include <bitcoin/system/math/hash.hpp>
-#include <bitcoin/system/math/limits.hpp>
-#include <bitcoin/system/message/inventory.hpp>
-#include <bitcoin/system/message/inventory_vector.hpp>
-#include <bitcoin/system/message/messages.hpp>
-#include <bitcoin/system/message/version.hpp>
-#include <bitcoin/system/utility/container_sink.hpp>
-#include <bitcoin/system/utility/container_source.hpp>
-#include <bitcoin/system/utility/istream_reader.hpp>
-#include <bitcoin/system/utility/ostream_writer.hpp>
+#include <nuls/system/math/hash.hpp>
+#include <nuls/system/math/limits.hpp>
+#include <nuls/system/message/inventory.hpp>
+#include <nuls/system/message/inventory_vector.hpp>
+#include <nuls/system/message/messages.hpp>
+#include <nuls/system/message/version.hpp>
+#include <nuls/system/utility/container_sink.hpp>
+#include <nuls/system/utility/container_source.hpp>
+#include <nuls/system/utility/istream_reader.hpp>
+#include <nuls/system/utility/ostream_writer.hpp>
 
-namespace libbitcoin {
+namespace libnuls {
 namespace system {
 namespace message {
 
@@ -253,4 +253,4 @@ bool inventory::operator!=(const inventory& other) const
 
 } // namespace message
 } // namespace system
-} // namespace libbitcoin
+} // namespace libnuls

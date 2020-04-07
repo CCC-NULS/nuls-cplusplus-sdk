@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2011-2019 libbitcoin developers (see AUTHORS)
+ * Copyright (c) 2011-2019 libnuls developers (see AUTHORS)
  *
- * This file is part of libbitcoin.
+ * This file is part of libnuls.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -16,15 +16,15 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include <bitcoin/system/chain/output_point.hpp>
+#include <nuls/system/chain/output_point.hpp>
 
 #include <cstddef>
 #include <cstdint>
 #include <utility>
-#include <bitcoin/system/constants.hpp>
-#include <bitcoin/system/chain/point.hpp>
+#include <nuls/system/constants.hpp>
+#include <nuls/system/chain/point.hpp>
 
-namespace libbitcoin {
+namespace libnuls {
 namespace system {
 namespace chain {
 
@@ -157,4 +157,4 @@ bool output_point::is_mature(size_t height) const
 
 } // namespace chain
 } // namespace system
-} // namespace libbitcoin
+} // namespace libnuls

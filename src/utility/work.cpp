@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2011-2019 libbitcoin developers (see AUTHORS)
+ * Copyright (c) 2011-2019 libnuls developers (see AUTHORS)
  *
- * This file is part of libbitcoin.
+ * This file is part of libnuls.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -16,14 +16,14 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include <bitcoin/system/utility/work.hpp>
+#include <nuls/system/utility/work.hpp>
 
 #include <memory>
 #include <string>
-#include <bitcoin/system/utility/delegates.hpp>
-#include <bitcoin/system/utility/threadpool.hpp>
+#include <nuls/system/utility/delegates.hpp>
+#include <nuls/system/utility/threadpool.hpp>
 
-namespace libbitcoin {
+namespace libnuls {
 namespace system {
 
 work::work(threadpool& pool, const std::string& name)
@@ -64,4 +64,4 @@ work::work(threadpool& pool, const std::string& name)
 ////}
 
 } // namespace system
-} // namespace libbitcoin
+} // namespace libnuls

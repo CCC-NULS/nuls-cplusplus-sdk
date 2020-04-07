@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2011-2019 libbitcoin developers (see AUTHORS)
+ * Copyright (c) 2011-2019 libnuls developers (see AUTHORS)
  *
- * This file is part of libbitcoin.
+ * This file is part of libnuls.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -17,7 +17,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #include <boost/test/unit_test.hpp>
-#include <bitcoin/system.hpp>
+#include <nuls/system.hpp>
 
 using namespace bc::system;
 using namespace bc::system::wallet;
@@ -26,7 +26,7 @@ BOOST_AUTO_TEST_SUITE(uri_tests)
 
 BOOST_AUTO_TEST_CASE(uri__parse__http_roundtrip__test)
 {
-    const auto test = "http://github.com/libbitcoin?good=true#nice";
+    const auto test = "http://github.com/libnuls?good=true#nice";
     uri parsed;
     BOOST_REQUIRE(parsed.decode(test));
 
@@ -36,7 +36,7 @@ BOOST_AUTO_TEST_CASE(uri__parse__http_roundtrip__test)
 
     BOOST_REQUIRE_EQUAL(parsed.scheme(), "http");
     BOOST_REQUIRE_EQUAL(parsed.authority(), "github.com");
-    BOOST_REQUIRE_EQUAL(parsed.path(), "/libbitcoin");
+    BOOST_REQUIRE_EQUAL(parsed.path(), "/libnuls");
     BOOST_REQUIRE_EQUAL(parsed.query(), "good=true");
     BOOST_REQUIRE_EQUAL(parsed.fragment(), "nice");
 

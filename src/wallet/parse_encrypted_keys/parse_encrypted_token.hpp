@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2011-2019 libbitcoin developers (see AUTHORS)
+ * Copyright (c) 2011-2019 libnuls developers (see AUTHORS)
  *
- * This file is part of libbitcoin.
+ * This file is part of libnuls.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -16,17 +16,17 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef LIBBITCOIN_SYSTEM_PARSE_ENCRYPTED_TOKEN_HPP
-#define LIBBITCOIN_SYSTEM_PARSE_ENCRYPTED_TOKEN_HPP
+#ifndef LIBNULS_SYSTEM_PARSE_ENCRYPTED_TOKEN_HPP
+#define LIBNULS_SYSTEM_PARSE_ENCRYPTED_TOKEN_HPP
 
 #include <cstdint>
 #include <cstddef>
-#include <bitcoin/system/math/hash.hpp>
-#include <bitcoin/system/utility/data.hpp>
-#include <bitcoin/system/wallet/encrypted_keys.hpp>
+#include <nuls/system/math/hash.hpp>
+#include <nuls/system/utility/data.hpp>
+#include <nuls/system/wallet/encrypted_keys.hpp>
 #include "parse_encrypted_key.hpp"
 
-namespace libbitcoin {
+namespace libnuls {
 namespace system {
 namespace wallet {
 
@@ -59,6 +59,6 @@ private:
 
 } // namespace wallet
 } // namespace system
-} // namespace libbitcoin
+} // namespace libnuls
 
 #endif

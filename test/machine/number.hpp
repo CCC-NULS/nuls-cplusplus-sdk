@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2011-2019 libbitcoin developers (see AUTHORS)
+ * Copyright (c) 2011-2019 libnuls developers (see AUTHORS)
  *
- * This file is part of libbitcoin.
+ * This file is part of libnuls.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -16,12 +16,12 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef LIBBITCOIN_SYSTEM_TEST_MACHINE_NUMBER_HPP
-#define LIBBITCOIN_SYSTEM_TEST_MACHINE_NUMBER_HPP
+#ifndef LIBNULS_SYSTEM_TEST_MACHINE_NUMBER_HPP
+#define LIBNULS_SYSTEM_TEST_MACHINE_NUMBER_HPP
 
 #include <cstdint>
 #include <limits>
-#include <bitcoin/system.hpp>
+#include <nuls/system.hpp>
 
 // (-2147483647 - 1)  and (-9223372036854775807 - 1) prevent warnings.
 

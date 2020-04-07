@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2011-2019 libbitcoin developers (see AUTHORS)
+ * Copyright (c) 2011-2019 libnuls developers (see AUTHORS)
  *
- * This file is part of libbitcoin.
+ * This file is part of libnuls.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -25,15 +25,15 @@
 #include <iostream>
 #include <iterator>
 #include <vector>
-#include <bitcoin/system/constants.hpp>
-#include <bitcoin/system/math/golomb_coded_sets.hpp>
-#include <bitcoin/system/utility/container_source.hpp>
-#include <bitcoin/system/utility/container_sink.hpp>
-#include <bitcoin/system/utility/istream_bit_reader.hpp>
-#include <bitcoin/system/utility/ostream_bit_writer.hpp>
-#include <bitcoin/system/utility/ostream_writer.hpp>
+#include <nuls/system/constants.hpp>
+#include <nuls/system/math/golomb_coded_sets.hpp>
+#include <nuls/system/utility/container_source.hpp>
+#include <nuls/system/utility/container_sink.hpp>
+#include <nuls/system/utility/istream_bit_reader.hpp>
+#include <nuls/system/utility/ostream_bit_writer.hpp>
+#include <nuls/system/utility/ostream_writer.hpp>
 
-namespace libbitcoin {
+namespace libnuls {
 namespace system {
 namespace golomb {
 
@@ -287,4 +287,4 @@ bool match(const data_stack& targets, reader& compressed_set,
 
 } // namespace golomb
 } // namespace system
-} // namespace libbitcoin
+} // namespace libnuls

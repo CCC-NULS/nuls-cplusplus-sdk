@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2011-2019 libbitcoin developers (see AUTHORS)
+ * Copyright (c) 2011-2019 libnuls developers (see AUTHORS)
  *
- * This file is part of libbitcoin.
+ * This file is part of libnuls.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -16,17 +16,17 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include <bitcoin/system/unicode/unicode_streambuf.hpp>
+#include <nuls/system/unicode/unicode_streambuf.hpp>
 
 #include <cstddef>
 #include <cstring>
 #include <iostream>
 #include <streambuf>
-#include <bitcoin/system/constants.hpp>
-#include <bitcoin/system/unicode/unicode.hpp>
-#include <bitcoin/system/utility/assert.hpp>
+#include <nuls/system/constants.hpp>
+#include <nuls/system/unicode/unicode.hpp>
+#include <nuls/system/utility/assert.hpp>
 
-namespace libbitcoin {
+namespace libnuls {
 namespace system {
 
 // Local definition for max number of bytes in a utf8 character.
@@ -149,4 +149,4 @@ int unicode_streambuf::sync()
 }
 
 } // namespace system
-} // namespace libbitcoin
+} // namespace libnuls

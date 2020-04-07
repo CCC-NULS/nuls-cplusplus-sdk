@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2011-2019 libbitcoin developers (see AUTHORS)
+ * Copyright (c) 2011-2019 libnuls developers (see AUTHORS)
  *
- * This file is part of libbitcoin.
+ * This file is part of libnuls.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -20,7 +20,7 @@
 #include <cstddef>
 #include <string>
 #include <boost/test/unit_test.hpp>
-#include <bitcoin/system.hpp>
+#include <nuls/system.hpp>
 
 using namespace bc::system;
 using namespace bc::system::wallet;
@@ -156,7 +156,7 @@ BOOST_AUTO_TEST_SUITE(encrypted__encrypt_private)
     BOOST_REQUIRE(encrypt(out_private, secret, passphrase, version, compressed)); \
     BOOST_REQUIRE_EQUAL(encode_base58(out_private), expected)
 
-// github.com/bitcoin/bips/blob/master/bip-0038.mediawiki#no-compression-no-ec-multiply
+// github.com/nuls/bips/blob/master/bip-0038.mediawiki#no-compression-no-ec-multiply
 BOOST_AUTO_TEST_CASE(encrypted__encrypt_private__vector_0__expected)
 {
     auto compression = false;
@@ -166,7 +166,7 @@ BOOST_AUTO_TEST_CASE(encrypted__encrypt_private__vector_0__expected)
     BC_REQUIRE_ENCRYPT(secret, "TestingOneTwoThree", version, compression, expected);
 }
 
-// github.com/bitcoin/bips/blob/master/bip-0038.mediawiki#no-compression-no-ec-multiply
+// github.com/nuls/bips/blob/master/bip-0038.mediawiki#no-compression-no-ec-multiply
 BOOST_AUTO_TEST_CASE(encrypted__encrypt_private__vector_1__expected)
 {
     auto compression = false;
@@ -176,7 +176,7 @@ BOOST_AUTO_TEST_CASE(encrypted__encrypt_private__vector_1__expected)
     BC_REQUIRE_ENCRYPT(secret, "Satoshi", version, compression, expected);
 }
 
-// github.com/bitcoin/bips/blob/master/bip-0038.mediawiki#compression-no-ec-multiply
+// github.com/nuls/bips/blob/master/bip-0038.mediawiki#compression-no-ec-multiply
 BOOST_AUTO_TEST_CASE(encrypted__encrypt_private__vector_2_compressed__expected)
 {
     auto compression = true;
@@ -186,7 +186,7 @@ BOOST_AUTO_TEST_CASE(encrypted__encrypt_private__vector_2_compressed__expected)
     BC_REQUIRE_ENCRYPT(secret, "TestingOneTwoThree", version, compression, expected);
 }
 
-// github.com/bitcoin/bips/blob/master/bip-0038.mediawiki#compression-no-ec-multiply
+// github.com/nuls/bips/blob/master/bip-0038.mediawiki#compression-no-ec-multiply
 BOOST_AUTO_TEST_CASE(encrypted__encrypt_private__vector_3_compressed__expected)
 {
     auto compression = true;
@@ -196,7 +196,7 @@ BOOST_AUTO_TEST_CASE(encrypted__encrypt_private__vector_3_compressed__expected)
     BC_REQUIRE_ENCRYPT(secret, "Satoshi", version, compression, expected);
 }
 
-// #3 from: github.com/bitcoin/bips/blob/master/bip-0038.mediawiki#no-compression-no-ec-multiply
+// #3 from: github.com/nuls/bips/blob/master/bip-0038.mediawiki#no-compression-no-ec-multiply
 BOOST_AUTO_TEST_CASE(encrypted__encrypt_private__vector_unicode__expected)
 {
     auto compression = false;
@@ -222,7 +222,7 @@ BOOST_AUTO_TEST_SUITE(encrypted__decrypt1)
     bool out_is_compressed = true; \
     BOOST_REQUIRE(decrypt(out_secret, out_version, out_is_compressed, key, passphrase))
 
-// github.com/bitcoin/bips/blob/master/bip-0038.mediawiki#no-compression-no-ec-multiply
+// github.com/nuls/bips/blob/master/bip-0038.mediawiki#no-compression-no-ec-multiply
 BOOST_AUTO_TEST_CASE(encrypted__decrypt_private__vector_0__expected)
 {
     const uint8_t expected_version = 0x00;
@@ -233,7 +233,7 @@ BOOST_AUTO_TEST_CASE(encrypted__decrypt_private__vector_0__expected)
     BOOST_REQUIRE(!out_is_compressed);
 }
 
-// github.com/bitcoin/bips/blob/master/bip-0038.mediawiki#no-compression-no-ec-multiply
+// github.com/nuls/bips/blob/master/bip-0038.mediawiki#no-compression-no-ec-multiply
 BOOST_AUTO_TEST_CASE(encrypted__decrypt_private__vector_1__expected)
 {
     const uint8_t expected_version = 0x00;
@@ -244,7 +244,7 @@ BOOST_AUTO_TEST_CASE(encrypted__decrypt_private__vector_1__expected)
     BOOST_REQUIRE(!out_is_compressed);
 }
 
-// github.com/bitcoin/bips/blob/master/bip-0038.mediawiki#compression-no-ec-multiply
+// github.com/nuls/bips/blob/master/bip-0038.mediawiki#compression-no-ec-multiply
 BOOST_AUTO_TEST_CASE(encrypted__decrypt_private__vector_2_compressed__expected)
 {
     const uint8_t expected_version = 0x00;
@@ -255,7 +255,7 @@ BOOST_AUTO_TEST_CASE(encrypted__decrypt_private__vector_2_compressed__expected)
     BOOST_REQUIRE(out_is_compressed);
 }
 
-// github.com/bitcoin/bips/blob/master/bip-0038.mediawiki#compression-no-ec-multiply
+// github.com/nuls/bips/blob/master/bip-0038.mediawiki#compression-no-ec-multiply
 BOOST_AUTO_TEST_CASE(encrypted__decrypt_private__vector_3_compressed__expected)
 {
     const uint8_t expected_version = 0x00;
@@ -266,7 +266,7 @@ BOOST_AUTO_TEST_CASE(encrypted__decrypt_private__vector_3_compressed__expected)
     BOOST_REQUIRE(out_is_compressed);
 }
 
-// github.com/bitcoin/bips/blob/master/bip-0038.mediawiki#no-compression-no-ec-multiply
+// github.com/nuls/bips/blob/master/bip-0038.mediawiki#no-compression-no-ec-multiply
 BOOST_AUTO_TEST_CASE(encrypted__decrypt_private__vector_4_multiplied__expected)
 {
     const uint8_t expected_version = 0x00;
@@ -277,7 +277,7 @@ BOOST_AUTO_TEST_CASE(encrypted__decrypt_private__vector_4_multiplied__expected)
     BOOST_REQUIRE(!out_is_compressed);
 }
 
-// github.com/bitcoin/bips/blob/master/bip-0038.mediawiki#no-compression-no-ec-multiply
+// github.com/nuls/bips/blob/master/bip-0038.mediawiki#no-compression-no-ec-multiply
 BOOST_AUTO_TEST_CASE(encrypted__decrypt_private__vector_5_multiplied__expected)
 {
     const uint8_t expected_version = 0x00;
@@ -288,7 +288,7 @@ BOOST_AUTO_TEST_CASE(encrypted__decrypt_private__vector_5_multiplied__expected)
     BOOST_REQUIRE(!out_is_compressed);
 }
 
-// github.com/bitcoin/bips/blob/master/bip-0038.mediawiki#ec-multiply-no-compression-lotsequence-numbers
+// github.com/nuls/bips/blob/master/bip-0038.mediawiki#ec-multiply-no-compression-lotsequence-numbers
 BOOST_AUTO_TEST_CASE(encrypted__decrypt_private__vector_6_multiplied_lot__expected)
 {
     const uint8_t expected_version = 0x00;
@@ -299,7 +299,7 @@ BOOST_AUTO_TEST_CASE(encrypted__decrypt_private__vector_6_multiplied_lot__expect
     BOOST_REQUIRE(!out_is_compressed);
 }
 
-// github.com/bitcoin/bips/blob/master/bip-0038.mediawiki#ec-multiply-no-compression-lotsequence-numbers
+// github.com/nuls/bips/blob/master/bip-0038.mediawiki#ec-multiply-no-compression-lotsequence-numbers
 BOOST_AUTO_TEST_CASE(encrypted__decrypt_private__vector_7_multiplied_lot__expected)
 {
     const uint8_t expected_version = 0x00;
@@ -315,7 +315,7 @@ BOOST_AUTO_TEST_CASE(encrypted__decrypt_private__vector_8_multiplied__expected)
 {
     const uint8_t expected_version = 0x00;
     const auto key = base58_literal("6PfPAw5HErFdzMyBvGMwSfSWjKmzgm3jDg7RxQyVCSSBJFZLAZ6hVupmpn");
-    BC_REQUIRE_DECRYPT_SECRET(key, "libbitcoin test");
+    BC_REQUIRE_DECRYPT_SECRET(key, "libnuls test");
     BOOST_REQUIRE_EQUAL(encode_base16(out_secret), "fb4bfb0bfe151d524b0b11983b9f826d6a0bc7f7bdc480864a1b557ff0c59eb4");
     BOOST_REQUIRE_EQUAL(out_version, expected_version);
     BOOST_REQUIRE(!out_is_compressed);
@@ -349,7 +349,7 @@ BOOST_AUTO_TEST_SUITE(encrypted__decrypt_public)
     BOOST_REQUIRE(!out_is_compressed); \
     const auto derived_address = payment_address({ out_point, out_is_compressed }, out_version).encoded()
 
-// github.com/bitcoin/bips/blob/master/bip-0038.mediawiki#ec-multiply-no-compression-lotsequence-numbers
+// github.com/nuls/bips/blob/master/bip-0038.mediawiki#ec-multiply-no-compression-lotsequence-numbers
 BOOST_AUTO_TEST_CASE(encrypted__decrypt_public__vector_6_lot__expected)
 {
     const uint8_t version = 0x00;
@@ -359,7 +359,7 @@ BOOST_AUTO_TEST_CASE(encrypted__decrypt_public__vector_6_lot__expected)
     BOOST_REQUIRE_EQUAL(derived_address, "1Jscj8ALrYu2y9TD8NrpvDBugPedmbj4Yh");
 }
 
-// github.com/bitcoin/bips/blob/master/bip-0038.mediawiki#ec-multiply-no-compression-lotsequence-numbers
+// github.com/nuls/bips/blob/master/bip-0038.mediawiki#ec-multiply-no-compression-lotsequence-numbers
 BOOST_AUTO_TEST_CASE(encrypted__decrypt_public__vector_7_lot__expected)
 {
     const uint8_t version = 0x00;
@@ -374,7 +374,7 @@ BOOST_AUTO_TEST_CASE(encrypted__decrypt_public__vector_8__expected)
 {
     const uint8_t version = 0x00;
     const auto key = base58_literal("cfrm38V5Nm1mn7GxPBAGTXawqXRwE1EbR19GqsvJ9JmF5VKLqi8nETmULpELkQvExCGkTNCH2An");
-    BC_REQUIRE_DECRYPT_POINT(key, "libbitcoin test", version);
+    BC_REQUIRE_DECRYPT_POINT(key, "libnuls test", version);
     BOOST_REQUIRE_EQUAL(encode_base16(out_point), "02c13b65302bbbed4f7ad67bc68e928b58e7748d84091a2d42680dc52e7916079e");
     BOOST_REQUIRE_EQUAL(derived_address, "1NQgLnFz1ZzF6KkCJ4SM3xz3Jy1q2hEEax");
 }

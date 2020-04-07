@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2011-2019 libbitcoin developers (see AUTHORS)
+ * Copyright (c) 2011-2019 libnuls developers (see AUTHORS)
  *
- * This file is part of libbitcoin.
+ * This file is part of libnuls.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -16,12 +16,12 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef LIBBITCOIN_SYSTEM_TEST_MNEMONIC_HPP
-#define LIBBITCOIN_SYSTEM_TEST_MNEMONIC_HPP
+#ifndef LIBNULS_SYSTEM_TEST_MNEMONIC_HPP
+#define LIBNULS_SYSTEM_TEST_MNEMONIC_HPP
 
 #include <string>
 #include <vector>
-#include <bitcoin/system.hpp>
+#include <nuls/system.hpp>
 
 struct mnemonic_result
 {
@@ -293,7 +293,7 @@ const mnemonic_result_list mnemonic_no_passphrase
 // https://github.com/bip32JP/bip32JP.github.io/blob/master/test_JP_BIP39.json
 //
 // Originally referenced from:
-// https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki#Test_vectors
+// https://github.com/nuls/bips/blob/master/bip-0039.mediawiki#Test_vectors
 const mnemonic_result_list mnemonic_japanese_vectors
 {
     {

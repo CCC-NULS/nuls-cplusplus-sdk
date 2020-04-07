@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2011-2019 libbitcoin developers (see AUTHORS)
+ * Copyright (c) 2011-2019 libnuls developers (see AUTHORS)
  *
- * This file is part of libbitcoin.
+ * This file is part of libnuls.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -19,17 +19,17 @@
 
 // Sponsored in part by Digital Contract Design, LLC
 
-#include <bitcoin/system/utility/neutrino_filter.hpp>
+#include <nuls/system/utility/neutrino_filter.hpp>
 
 #include <algorithm>
-#include <bitcoin/system/math/golomb_coded_sets.hpp>
-#include <bitcoin/system/utility/collection.hpp>
-#include <bitcoin/system/utility/container_sink.hpp>
-#include <bitcoin/system/utility/container_source.hpp>
-#include <bitcoin/system/utility/istream_reader.hpp>
-#include <bitcoin/system/utility/ostream_writer.hpp>
+#include <nuls/system/math/golomb_coded_sets.hpp>
+#include <nuls/system/utility/collection.hpp>
+#include <nuls/system/utility/container_sink.hpp>
+#include <nuls/system/utility/container_source.hpp>
+#include <nuls/system/utility/istream_reader.hpp>
+#include <nuls/system/utility/ostream_writer.hpp>
 
-namespace libbitcoin {
+namespace libnuls {
 namespace system {
 namespace neutrino {
 
@@ -171,4 +171,4 @@ bool match_filter(const message::compact_filter& filter,
 
 } // namespace chain
 } // namespace system
-} // namespace libbitcoin
+} // namespace libnuls

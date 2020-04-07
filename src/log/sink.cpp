@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2011-2019 libbitcoin developers (see AUTHORS)
+ * Copyright (c) 2011-2019 libnuls developers (see AUTHORS)
  *
- * This file is part of libbitcoin.
+ * This file is part of libnuls.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -16,7 +16,7 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include <bitcoin/system/log/sink.hpp>
+#include <nuls/system/log/sink.hpp>
 
 #include <map>
 #include <string>
@@ -27,13 +27,13 @@
 #include <boost/log/sinks.hpp>
 #include <boost/log/support/date_time.hpp>
 #include <boost/smart_ptr/make_shared.hpp>
-#include <bitcoin/system/constants.hpp>
-#include <bitcoin/system/log/attributes.hpp>
-#include <bitcoin/system/log/file_collector_repository.hpp>
-#include <bitcoin/system/log/severity.hpp>
-#include <bitcoin/system/unicode/ofstream.hpp>
+#include <nuls/system/constants.hpp>
+#include <nuls/system/log/attributes.hpp>
+#include <nuls/system/log/file_collector_repository.hpp>
+#include <nuls/system/log/severity.hpp>
+#include <nuls/system/unicode/ofstream.hpp>
 
-namespace libbitcoin {
+namespace libnuls {
 namespace system {
 namespace log {
 
@@ -207,4 +207,4 @@ void initialize(const rotable_file& debug_file, const rotable_file& error_file,
 
 } // namespace log
 } // namespace system
-} // namespace libbitcoin
+} // namespace libnuls

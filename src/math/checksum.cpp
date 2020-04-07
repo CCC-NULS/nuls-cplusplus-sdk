@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2011-2019 libbitcoin developers (see AUTHORS)
+ * Copyright (c) 2011-2019 libnuls developers (see AUTHORS)
  *
- * This file is part of libbitcoin.
+ * This file is part of libnuls.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -16,13 +16,13 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include <bitcoin/system/math/checksum.hpp>
+#include <nuls/system/math/checksum.hpp>
 
-#include <bitcoin/system/math/hash.hpp>
-#include <bitcoin/system/utility/endian.hpp>
-#include <bitcoin/system/utility/deserializer.hpp>
+#include <nuls/system/math/hash.hpp>
+#include <nuls/system/utility/endian.hpp>
+#include <nuls/system/utility/deserializer.hpp>
 
-namespace libbitcoin {
+namespace libnuls {
 namespace system {
 
 void append_checksum(data_chunk& data)
@@ -49,5 +49,5 @@ bool verify_checksum(const data_slice& data)
 }
 
 } // namespace system
-} // namespace libbitcoin
+} // namespace libnuls
 

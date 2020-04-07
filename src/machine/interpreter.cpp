@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2011-2019 libbitcoin developers (see AUTHORS)
+ * Copyright (c) 2011-2019 libnuls developers (see AUTHORS)
  *
- * This file is part of libbitcoin.
+ * This file is part of libnuls.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -16,14 +16,14 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include <bitcoin/system/machine/interpreter.hpp>
+#include <nuls/system/machine/interpreter.hpp>
 
-#include <bitcoin/system/constants.hpp>
-#include <bitcoin/system/error.hpp>
-#include <bitcoin/system/machine/operation.hpp>
-#include <bitcoin/system/machine/program.hpp>
+#include <nuls/system/constants.hpp>
+#include <nuls/system/error.hpp>
+#include <nuls/system/machine/operation.hpp>
+#include <nuls/system/machine/program.hpp>
 
-namespace libbitcoin {
+namespace libnuls {
 namespace system {
 namespace machine {
 
@@ -65,4 +65,4 @@ code interpreter::run(const operation& op, program& program)
 
 } // namespace machine
 } // namespace system
-} // namespace libbitcoin
+} // namespace libnuls

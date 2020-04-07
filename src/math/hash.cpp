@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2011-2019 libbitcoin developers (see AUTHORS)
+ * Copyright (c) 2011-2019 libnuls developers (see AUTHORS)
  *
- * This file is part of libbitcoin.
+ * This file is part of libnuls.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -16,7 +16,7 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include <bitcoin/system/math/hash.hpp>
+#include <nuls/system/math/hash.hpp>
 
 #include <algorithm>
 #include <cstddef>
@@ -33,7 +33,7 @@
 #include "../math/external/sha256.h"
 #include "../math/external/sha512.h"
 
-namespace libbitcoin {
+namespace libnuls {
 namespace system {
 
 hash_digest bitcoin_hash(const data_slice& data)
@@ -167,4 +167,4 @@ data_chunk scrypt(const data_slice& data, const data_slice& salt, uint64_t N, ui
 }
 
 } // namespace system
-} // namespace libbitcoin
+} // namespace libnuls

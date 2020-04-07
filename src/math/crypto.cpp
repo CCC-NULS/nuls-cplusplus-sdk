@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2011-2019 libbitcoin developers (see AUTHORS)
+ * Copyright (c) 2011-2019 libnuls developers (see AUTHORS)
  *
- * This file is part of libbitcoin.
+ * This file is part of libnuls.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -16,15 +16,15 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include <bitcoin/system/math/crypto.hpp>
+#include <nuls/system/math/crypto.hpp>
 
-#include <bitcoin/system/math/elliptic_curve.hpp>
-#include <bitcoin/system/math/hash.hpp>
-#include <bitcoin/system/utility/assert.hpp>
-#include <bitcoin/system/utility/data.hpp>
+#include <nuls/system/math/elliptic_curve.hpp>
+#include <nuls/system/math/hash.hpp>
+#include <nuls/system/utility/assert.hpp>
+#include <nuls/system/utility/data.hpp>
 #include "../math/external/aes256.h"
 
-namespace libbitcoin {
+namespace libnuls {
 namespace system {
 
 void aes256_encrypt(const aes_secret& key, aes_block& block)
@@ -44,4 +44,4 @@ void aes256_decrypt(const aes_secret& key, aes_block& block)
 }
 
 } // namespace system
-} // namespace libbitcoin
+} // namespace libnuls

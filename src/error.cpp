@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2011-2019 libbitcoin developers (see AUTHORS)
+ * Copyright (c) 2011-2019 libnuls developers (see AUTHORS)
  *
- * This file is part of libbitcoin.
+ * This file is part of libnuls.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -16,11 +16,11 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include <bitcoin/system/error.hpp>
+#include <nuls/system/error.hpp>
 
 #include <boost/asio.hpp>
 #include <boost/system/error_code.hpp>
-#include <bitcoin/system/compat.hpp>
+#include <nuls/system/compat.hpp>
 
 using namespace bc::system;
 
@@ -269,7 +269,7 @@ std::error_condition error_category_impl::default_error_condition(int ev)
     return std::error_condition(ev, *this);
 }
 
-namespace libbitcoin {
+namespace libnuls {
 namespace system {
 namespace error {
 
@@ -448,4 +448,4 @@ namespace error {
 
 } // namespace error
 } // namespace system
-} // namespace libbitcoin
+} // namespace libnuls

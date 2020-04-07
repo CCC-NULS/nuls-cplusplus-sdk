@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2011-2019 libbitcoin developers (see AUTHORS)
+ * Copyright (c) 2011-2019 libnuls developers (see AUTHORS)
  *
- * This file is part of libbitcoin.
+ * This file is part of libnuls.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -16,22 +16,22 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include <bitcoin/system/math/elliptic_curve.hpp>
+#include <nuls/system/math/elliptic_curve.hpp>
 
 #include <algorithm>
 #include <utility>
 #include <secp256k1.h>
 #include <secp256k1_recovery.h>
 #include <boost/ptr_container/ptr_vector.hpp>
-#include <bitcoin/system/math/hash.hpp>
-#include <bitcoin/system/math/limits.hpp>
-#include <bitcoin/system/utility/assert.hpp>
-#include <bitcoin/system/utility/data.hpp>
-#include <bitcoin/system/wallet/hd_private.hpp>
+#include <nuls/system/math/hash.hpp>
+#include <nuls/system/math/limits.hpp>
+#include <nuls/system/utility/assert.hpp>
+#include <nuls/system/utility/data.hpp>
+#include <nuls/system/wallet/hd_private.hpp>
 #include "../math/external/lax_der_parsing.h"
 #include "secp256k1_initializer.hpp"
 
-namespace libbitcoin {
+namespace libnuls {
 namespace system {
 
 using namespace boost;
@@ -441,4 +441,4 @@ bool recover_public(ec_uncompressed& out,
 }
 
 } // namespace system
-} // namespace libbitcoin
+} // namespace libnuls

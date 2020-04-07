@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2011-2019 libbitcoin developers (see AUTHORS)
+ * Copyright (c) 2011-2019 libnuls developers (see AUTHORS)
  *
- * This file is part of libbitcoin.
+ * This file is part of libnuls.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -19,17 +19,17 @@
 
 // Sponsored in part by Digital Contract Design, LLC
 
-#include <bitcoin/system/utility/ostream_bit_writer.hpp>
+#include <nuls/system/utility/ostream_bit_writer.hpp>
 
 #include <algorithm>
 #include <iostream>
 #include <iterator>
-#include <bitcoin/system/constants.hpp>
-#include <bitcoin/system/math/limits.hpp>
-#include <bitcoin/system/utility/endian.hpp>
-#include <bitcoin/system/utility/reader.hpp>
+#include <nuls/system/constants.hpp>
+#include <nuls/system/math/limits.hpp>
+#include <nuls/system/utility/endian.hpp>
+#include <nuls/system/utility/reader.hpp>
 
-namespace libbitcoin {
+namespace libnuls {
 namespace system {
 
 ////BC_CONSTEXPR uint8_t bit_mask = 0x01;
@@ -302,4 +302,4 @@ void ostream_bit_writer::skip(size_t size)
 }
 
 } // namespace system
-} // namespace libbitcoin
+} // namespace libnuls

@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2011-2019 libbitcoin developers (see AUTHORS)
+ * Copyright (c) 2011-2019 libnuls developers (see AUTHORS)
  *
- * This file is part of libbitcoin.
+ * This file is part of libnuls.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -16,15 +16,15 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include <bitcoin/system/utility/interprocess_lock.hpp>
+#include <nuls/system/utility/interprocess_lock.hpp>
 
 #include <memory>
 #include <string>
 #include <boost/filesystem.hpp>
-#include <bitcoin/system/unicode/file_lock.hpp>
-#include <bitcoin/system/unicode/ofstream.hpp>
+#include <nuls/system/unicode/file_lock.hpp>
+#include <nuls/system/unicode/ofstream.hpp>
 
-namespace libbitcoin {
+namespace libnuls {
 namespace system {
 
 // static
@@ -74,4 +74,4 @@ bool interprocess_lock::unlock()
 }
 
 } // namespace system
-} // namespace libbitcoin
+} // namespace libnuls

@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2011-2019 libbitcoin developers (see AUTHORS)
+ * Copyright (c) 2011-2019 libnuls developers (see AUTHORS)
  *
- * This file is part of libbitcoin.
+ * This file is part of libnuls.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -16,29 +16,29 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include <bitcoin/system/wallet/witness_address.hpp>
+#include <nuls/system/wallet/witness_address.hpp>
 
 #include <algorithm>
 #include <cstdint>
 #include <string>
 #include <utility>
 #include <boost/program_options.hpp>
-#include <bitcoin/system/formats/base_32.hpp>
-#include <bitcoin/system/formats/base_58.hpp>
-#include <bitcoin/system/math/checksum.hpp>
-#include <bitcoin/system/math/elliptic_curve.hpp>
-#include <bitcoin/system/math/hash.hpp>
-#include <bitcoin/system/wallet/ec_private.hpp>
-#include <bitcoin/system/wallet/ec_public.hpp>
+#include <nuls/system/formats/base_32.hpp>
+#include <nuls/system/formats/base_58.hpp>
+#include <nuls/system/math/checksum.hpp>
+#include <nuls/system/math/elliptic_curve.hpp>
+#include <nuls/system/math/hash.hpp>
+#include <nuls/system/wallet/ec_private.hpp>
+#include <nuls/system/wallet/ec_public.hpp>
 
-namespace libbitcoin {
+namespace libnuls {
 namespace system {
 namespace wallet {
 
 using namespace bc::system::machine;
 
 // BIP 173 prefix constants.
-// https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki#segwit-address-format
+// https://github.com/nuls/bips/blob/master/bip-0173.mediawiki#segwit-address-format
 const std::string witness_address::mainnet_prefix = "bc";
 const std::string witness_address::testnet_prefix = "tb";
 
@@ -384,4 +384,4 @@ data_chunk witness_address::convert_bits(uint32_t from_bits, uint32_t to_bits,
 
 } // namespace wallet
 } // namespace system
-} // namespace libbitcoin
+} // namespace libnuls

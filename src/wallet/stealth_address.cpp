@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2011-2019 libbitcoin developers (see AUTHORS)
+ * Copyright (c) 2011-2019 libnuls developers (see AUTHORS)
  *
- * This file is part of libbitcoin.
+ * This file is part of libnuls.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -16,22 +16,22 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include <bitcoin/system/wallet/stealth_address.hpp>
+#include <nuls/system/wallet/stealth_address.hpp>
 
 #include <algorithm>
 #include <cstdint>
 #include <iostream>
 #include <boost/program_options.hpp>
-#include <bitcoin/system/formats/base_58.hpp>
-#include <bitcoin/system/math/checksum.hpp>
-#include <bitcoin/system/math/elliptic_curve.hpp>
-#include <bitcoin/system/math/hash.hpp>
-#include <bitcoin/system/math/stealth.hpp>
-#include <bitcoin/system/utility/assert.hpp>
-#include <bitcoin/system/utility/binary.hpp>
-#include <bitcoin/system/utility/data.hpp>
+#include <nuls/system/formats/base_58.hpp>
+#include <nuls/system/math/checksum.hpp>
+#include <nuls/system/math/elliptic_curve.hpp>
+#include <nuls/system/math/hash.hpp>
+#include <nuls/system/math/stealth.hpp>
+#include <nuls/system/utility/assert.hpp>
+#include <nuls/system/utility/binary.hpp>
+#include <nuls/system/utility/data.hpp>
 
-namespace libbitcoin {
+namespace libnuls {
 namespace system {
 namespace wallet {
 
@@ -371,4 +371,4 @@ std::ostream& operator<<(std::ostream& out, const stealth_address& of)
 
 } // namespace wallet
 } // namespace system
-} // namespace libbitcoin
+} // namespace libnuls

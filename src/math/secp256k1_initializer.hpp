@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2011-2019 libbitcoin developers (see AUTHORS)
+ * Copyright (c) 2011-2019 libnuls developers (see AUTHORS)
  *
- * This file is part of libbitcoin.
+ * This file is part of libnuls.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -16,14 +16,14 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef LIBBITCOIN_SYSTEM_SECP256K1_INITIALIZER_HPP
-#define LIBBITCOIN_SYSTEM_SECP256K1_INITIALIZER_HPP
+#ifndef LIBNULS_SYSTEM_SECP256K1_INITIALIZER_HPP
+#define LIBNULS_SYSTEM_SECP256K1_INITIALIZER_HPP
 
 #include <mutex>
 #include <secp256k1.h>
-#include <bitcoin/system/define.hpp>
+#include <nuls/system/define.hpp>
 
-namespace libbitcoin {
+namespace libnuls {
 namespace system {
 
 /**
@@ -100,6 +100,6 @@ extern secp256k1_signing signing;
 extern secp256k1_verification verification;
 
 } // namespace system
-} // namespace libbitcoin
+} // namespace libnuls
 
 #endif

@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2011-2019 libbitcoin developers (see AUTHORS)
+ * Copyright (c) 2011-2019 libnuls developers (see AUTHORS)
  *
- * This file is part of libbitcoin.
+ * This file is part of libnuls.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -16,15 +16,15 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include <bitcoin/system/config/block.hpp>
+#include <nuls/system/config/block.hpp>
 
 #include <sstream>
 #include <string>
 #include <boost/program_options.hpp>
-#include <bitcoin/system/chain/block.hpp>
-#include <bitcoin/system/config/base16.hpp>
+#include <nuls/system/chain/block.hpp>
+#include <nuls/system/config/base16.hpp>
 
-namespace libbitcoin {
+namespace libnuls {
 namespace system {
 namespace config {
 
@@ -102,4 +102,4 @@ std::ostream& operator<<(std::ostream& output, const block& argument)
 
 } // namespace config
 } // namespace system
-} // namespace libbitcoin
+} // namespace libnuls

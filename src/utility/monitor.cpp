@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2011-2019 libbitcoin developers (see AUTHORS)
+ * Copyright (c) 2011-2019 libnuls developers (see AUTHORS)
  *
- * This file is part of libbitcoin.
+ * This file is part of libnuls.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -16,17 +16,17 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include <bitcoin/system/utility/monitor.hpp>
+#include <nuls/system/utility/monitor.hpp>
 
 #include <cstddef>
 #include <string>
 #include <utility>
-////#include <bitcoin/system/log/sources.hpp>
+////#include <nuls/system/log/sources.hpp>
 
-// libbitcoin defines the log and tracking but does not use them.
+// libnuls defines the log and tracking but does not use them.
 // These are defined in bc so that they can be used in network and blockchain.
 
-namespace libbitcoin {
+namespace libnuls {
 namespace system {
 
 monitor::monitor(count_ptr counter, std::string&& name)
@@ -41,4 +41,4 @@ monitor::~monitor()
 }
 
 } // namespace system
-} // namespace libbitcoin
+} // namespace libnuls

@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2011-2019 libbitcoin developers (see AUTHORS)
+ * Copyright (c) 2011-2019 libnuls developers (see AUTHORS)
  *
- * This file is part of libbitcoin.
+ * This file is part of libnuls.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -17,11 +17,11 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #include <cstdint>
-#include <bitcoin/system/settings.hpp>
-#include <bitcoin/system/chain/block.hpp>
-#include <bitcoin/system/chain/chain_state.hpp>
+#include <nuls/system/settings.hpp>
+#include <nuls/system/chain/block.hpp>
+#include <nuls/system/chain/chain_state.hpp>
 
-namespace libbitcoin {
+namespace libnuls {
 namespace system {
 
 using namespace chain;
@@ -299,4 +299,4 @@ uint64_t settings::bitcoin_to_satoshi(uint64_t value) const
 }
 
 } // namespace system
-} // namespace libbitcoin
+} // namespace libnuls

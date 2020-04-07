@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2011-2019 libbitcoin developers (see AUTHORS)
+ * Copyright (c) 2011-2019 libnuls developers (see AUTHORS)
  *
- * This file is part of libbitcoin.
+ * This file is part of libnuls.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -17,7 +17,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #include <boost/test/unit_test.hpp>
-#include <bitcoin/system.hpp>
+#include <nuls/system.hpp>
 
 using namespace bc::system;
 using namespace bc::system::chain;
@@ -37,7 +37,7 @@ BOOST_AUTO_TEST_SUITE(witness_address_tests)
 #define TESTNET_WITNESS_SCRIPT_HASH_SCRIPT "[0279BE667EF9DCBBAC55A06295CE870B07029BFCDB2DCE28D959F2815B16F81798] checksig"
 
 // BIP 173 witness address vectors
-// https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki#test-vectors
+// https://github.com/nuls/bips/blob/master/bip-0173.mediawiki#test-vectors
 struct test_address
 {
     std::string address;

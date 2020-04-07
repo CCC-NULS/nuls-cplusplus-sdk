@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2011-2019 libbitcoin developers (see AUTHORS)
+ * Copyright (c) 2011-2019 libnuls developers (see AUTHORS)
  *
- * This file is part of libbitcoin.
+ * This file is part of libnuls.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -16,13 +16,13 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include <bitcoin/system/unicode/console_streambuf.hpp>
+#include <nuls/system/unicode/console_streambuf.hpp>
 
 #include <cstddef>
 #include <iostream>
 #include <new>
 #include <streambuf>
-#include <bitcoin/system/math/limits.hpp>
+#include <nuls/system/math/limits.hpp>
 
 #ifdef _MSC_VER
 #include <windows.h>
@@ -38,7 +38,7 @@ static LPVOID get_input_handle()
 }
 #endif
 
-namespace libbitcoin {
+namespace libnuls {
 namespace system {
 
 // This class/mathod is a no-op on non-windows platforms.
@@ -127,4 +127,4 @@ std::wstreambuf::int_type console_streambuf::underflow()
 }
 
 } // namespace system
-} // namespace libbitcoin
+} // namespace libnuls

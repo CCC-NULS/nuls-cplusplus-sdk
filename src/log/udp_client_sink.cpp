@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2011-2019 libbitcoin developers (see AUTHORS)
+ * Copyright (c) 2011-2019 libnuls developers (see AUTHORS)
  *
- * This file is part of libbitcoin.
+ * This file is part of libnuls.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -16,15 +16,15 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include <bitcoin/system/log/udp_client_sink.hpp>
+#include <nuls/system/log/udp_client_sink.hpp>
 
 #include <cstddef>
 #include <functional>
 #include <string>
 #include <boost/make_shared.hpp>
-#include <bitcoin/system/error.hpp>
+#include <nuls/system/error.hpp>
 
-namespace libbitcoin {
+namespace libnuls {
 namespace system {
 namespace log {
 
@@ -65,4 +65,4 @@ void udp_client_sink::handle_send(const boost_code&, size_t,
 
 } // namespace log
 } // namespace system
-} // namespace libbitcoin
+} // namespace libnuls

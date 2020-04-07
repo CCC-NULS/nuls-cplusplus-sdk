@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2011-2019 libbitcoin developers (see AUTHORS)
+ * Copyright (c) 2011-2019 libnuls developers (see AUTHORS)
  *
- * This file is part of libbitcoin.
+ * This file is part of libnuls.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -16,14 +16,14 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include <bitcoin/system/config/parameter.hpp>
+#include <nuls/system/config/parameter.hpp>
 
 #include <boost/program_options.hpp>
-#include <bitcoin/system/utility/collection.hpp>
-#include <bitcoin/system/utility/string.hpp>
+#include <nuls/system/utility/collection.hpp>
+#include <nuls/system/utility/string.hpp>
 
 namespace po = boost::program_options;
-using namespace libbitcoin::system::config;
+using namespace libnuls::system::config;
 
 const int parameter::not_positional = -1;
 const char parameter::no_short_name = 0x00;
@@ -59,7 +59,7 @@ char parameter::short_name(const po::option_description& option) const
     //auto name = option.canonical_display_name(
     //    search_options::dashed_short_prefer_short);
 
-    // This is a substitute that allows us to use boost 1.49 for libbitcoin.
+    // This is a substitute that allows us to use boost 1.49 for libnuls.
     const auto name = split(option.format_name()).front();
     const auto is_short_name = name[0] == option_prefix_char &&
         name[1] != option_prefix_char;

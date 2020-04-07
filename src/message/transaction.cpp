@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2011-2019 libbitcoin developers (see AUTHORS)
+ * Copyright (c) 2011-2019 libnuls developers (see AUTHORS)
  *
- * This file is part of libbitcoin.
+ * This file is part of libnuls.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -16,17 +16,17 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include <bitcoin/system/message/transaction.hpp>
+#include <nuls/system/message/transaction.hpp>
 
 #include <istream>
 #include <utility>
-#include <bitcoin/system/chain/input.hpp>
-#include <bitcoin/system/chain/output.hpp>
-#include <bitcoin/system/message/version.hpp>
-#include <bitcoin/system/utility/data.hpp>
-#include <bitcoin/system/utility/reader.hpp>
+#include <nuls/system/chain/input.hpp>
+#include <nuls/system/chain/output.hpp>
+#include <nuls/system/message/version.hpp>
+#include <nuls/system/utility/data.hpp>
+#include <nuls/system/utility/reader.hpp>
 
-namespace libbitcoin {
+namespace libnuls {
 namespace system {
 namespace message {
 
@@ -172,4 +172,4 @@ bool transaction::operator!=(const transaction& other) const
 
 } // namespace message
 } // namespace system
-} // namespace libbitcoin
+} // namespace libnuls

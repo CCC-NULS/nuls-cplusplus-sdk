@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2011-2019 libbitcoin developers (see AUTHORS)
+ * Copyright (c) 2011-2019 libnuls developers (see AUTHORS)
  *
- * This file is part of libbitcoin.
+ * This file is part of libnuls.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -16,20 +16,20 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include <bitcoin/system/wallet/ec_public.hpp>
+#include <nuls/system/wallet/ec_public.hpp>
 
 #include <algorithm>
 #include <iostream>
 #include <utility>
 #include <boost/program_options.hpp>
-#include <bitcoin/system/formats/base_16.hpp>
-#include <bitcoin/system/math/elliptic_curve.hpp>
-#include <bitcoin/system/math/hash.hpp>
-#include <bitcoin/system/utility/data.hpp>
-#include <bitcoin/system/wallet/ec_private.hpp>
-#include <bitcoin/system/wallet/payment_address.hpp>
+#include <nuls/system/formats/base_16.hpp>
+#include <nuls/system/math/elliptic_curve.hpp>
+#include <nuls/system/math/hash.hpp>
+#include <nuls/system/utility/data.hpp>
+#include <nuls/system/wallet/ec_private.hpp>
+#include <nuls/system/wallet/payment_address.hpp>
 
-namespace libbitcoin {
+namespace libnuls {
 namespace system {
 namespace wallet {
 
@@ -244,4 +244,4 @@ void swap(ec_public& left, ec_public& right)
 
 } // namespace wallet
 } // namespace system
-} // namespace libbitcoin
+} // namespace libnuls

@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2011-2019 libbitcoin developers (see AUTHORS)
+ * Copyright (c) 2011-2019 libnuls developers (see AUTHORS)
  *
- * This file is part of libbitcoin.
+ * This file is part of libnuls.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -19,15 +19,15 @@
 
 // Sponsored in part by Digital Contract Design, LLC
 
-#include <bitcoin/system/utility/istream_bit_reader.hpp>
+#include <nuls/system/utility/istream_bit_reader.hpp>
 
 #include <algorithm>
 #include <cstddef>
-#include <bitcoin/system/constants.hpp>
-#include <bitcoin/system/utility/assert.hpp>
-#include <bitcoin/system/utility/endian.hpp>
+#include <nuls/system/constants.hpp>
+#include <nuls/system/utility/assert.hpp>
+#include <nuls/system/utility/endian.hpp>
 
-namespace libbitcoin {
+namespace libnuls {
 namespace system {
 
 BC_CONSTEXPR uint8_t bit_mask = 0x80;
@@ -368,4 +368,4 @@ bool istream_bit_reader::empty() const
 }
 
 } // namespace system
-} // namespace libbitcoin
+} // namespace libnuls

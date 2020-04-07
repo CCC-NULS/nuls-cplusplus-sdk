@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2011-2019 libbitcoin developers (see AUTHORS)
+ * Copyright (c) 2011-2019 libnuls developers (see AUTHORS)
  *
- * This file is part of libbitcoin.
+ * This file is part of libnuls.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -46,15 +46,15 @@
 //  DEALINGS IN THE SOFTWARE.
 //  --------------------------------------------------------------------------
 
-#include <bitcoin/system/formats/base_85.hpp>
+#include <nuls/system/formats/base_85.hpp>
 
 #include <cstddef>
 #include <cstdint>
 #include <string>
-#include <bitcoin/system/utility/assert.hpp>
-#include <bitcoin/system/utility/data.hpp>
+#include <nuls/system/utility/assert.hpp>
+#include <nuls/system/utility/data.hpp>
 
-namespace libbitcoin {
+namespace libnuls {
 namespace system {
 
 // Maps binary to base 85.
@@ -153,4 +153,4 @@ bool decode_base85(data_chunk& out, const std::string& in)
 }
 
 } // namespace system
-} // namespace libbitcoin
+} // namespace libnuls

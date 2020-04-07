@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2011-2019 libbitcoin developers (see AUTHORS)
+ * Copyright (c) 2011-2019 libnuls developers (see AUTHORS)
  *
- * This file is part of libbitcoin.
+ * This file is part of libnuls.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -16,31 +16,31 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include <bitcoin/system/wallet/encrypted_keys.hpp>
+#include <nuls/system/wallet/encrypted_keys.hpp>
 
 #include <cstdint>
 #include <cstddef>
 #include <algorithm>
 #include <stdexcept>
 #include <boost/locale.hpp>
-#include <bitcoin/system/define.hpp>
-#include <bitcoin/system/math/checksum.hpp>
-#include <bitcoin/system/math/crypto.hpp>
-#include <bitcoin/system/math/hash.hpp>
-#include <bitcoin/system/math/elliptic_curve.hpp>
-#include <bitcoin/system/unicode/unicode.hpp>
-#include <bitcoin/system/utility/assert.hpp>
-#include <bitcoin/system/utility/data.hpp>
-#include <bitcoin/system/utility/endian.hpp>
-#include <bitcoin/system/wallet/ec_private.hpp>
-#include <bitcoin/system/wallet/ec_public.hpp>
+#include <nuls/system/define.hpp>
+#include <nuls/system/math/checksum.hpp>
+#include <nuls/system/math/crypto.hpp>
+#include <nuls/system/math/hash.hpp>
+#include <nuls/system/math/elliptic_curve.hpp>
+#include <nuls/system/unicode/unicode.hpp>
+#include <nuls/system/utility/assert.hpp>
+#include <nuls/system/utility/data.hpp>
+#include <nuls/system/utility/endian.hpp>
+#include <nuls/system/wallet/ec_private.hpp>
+#include <nuls/system/wallet/ec_public.hpp>
 #include "parse_encrypted_keys/parse_encrypted_key.hpp"
 #include "parse_encrypted_keys/parse_encrypted_prefix.hpp"
 #include "parse_encrypted_keys/parse_encrypted_private.hpp"
 #include "parse_encrypted_keys/parse_encrypted_public.hpp"
 #include "parse_encrypted_keys/parse_encrypted_token.hpp"
 
-namespace libbitcoin {
+namespace libnuls {
 namespace system {
 namespace wallet {
 
@@ -524,4 +524,4 @@ bool decrypt(ec_compressed& out_point, uint8_t& out_version,
 
 } // namespace wallet
 } // namespace system
-} // namespace libbitcoin
+} // namespace libnuls

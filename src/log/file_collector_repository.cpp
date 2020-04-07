@@ -15,14 +15,14 @@
 
 // Modification of boost implementation to alter log file rotation naming.
 
-#include <bitcoin/system/log/file_collector_repository.hpp>
+#include <nuls/system/log/file_collector_repository.hpp>
 
 #include <boost/bind.hpp>
 #include <boost/smart_ptr/make_shared_object.hpp>
 #include <boost/smart_ptr/bad_weak_ptr.hpp>
-#include <bitcoin/system/compat.hpp>
+#include <nuls/system/compat.hpp>
 
-namespace libbitcoin {
+namespace libnuls {
 namespace system {
 namespace log {
 
@@ -85,4 +85,4 @@ boost::shared_ptr<boost::log::sinks::file::collector> make_collector(
 
 } // namespace log
 } // namespace system
-} // namespace libbitcoin
+} // namespace libnuls

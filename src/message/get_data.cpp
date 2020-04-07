@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2011-2019 libbitcoin developers (see AUTHORS)
+ * Copyright (c) 2011-2019 libnuls developers (see AUTHORS)
  *
- * This file is part of libbitcoin.
+ * This file is part of libnuls.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -16,16 +16,16 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include <bitcoin/system/message/get_data.hpp>
+#include <nuls/system/message/get_data.hpp>
 
 #include <algorithm>
 #include <initializer_list>
-#include <bitcoin/system/math/hash.hpp>
-#include <bitcoin/system/message/inventory.hpp>
-#include <bitcoin/system/message/inventory_vector.hpp>
-#include <bitcoin/system/message/version.hpp>
+#include <nuls/system/math/hash.hpp>
+#include <nuls/system/message/inventory.hpp>
+#include <nuls/system/message/inventory_vector.hpp>
+#include <nuls/system/message/version.hpp>
 
-namespace libbitcoin {
+namespace libnuls {
 namespace system {
 namespace message {
 
@@ -144,4 +144,4 @@ bool get_data::operator!=(const get_data& other) const
 
 } // namespace message
 } // namespace system
-} // namespace libbitcoin
+} // namespace libnuls

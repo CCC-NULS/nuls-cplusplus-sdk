@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2011-2019 libbitcoin developers (see AUTHORS)
+ * Copyright (c) 2011-2019 libnuls developers (see AUTHORS)
  *
- * This file is part of libbitcoin.
+ * This file is part of libnuls.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -16,7 +16,7 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include <bitcoin/system/wallet/electrum.hpp>
+#include <nuls/system/wallet/electrum.hpp>
 
 #include <algorithm>
 #include <cstdint>
@@ -24,19 +24,19 @@
 #include <boost/algorithm/string.hpp>
 #include <boost/locale.hpp>
 #include <boost/range/adaptor/reversed.hpp>
-#include <bitcoin/system/define.hpp>
-#include <bitcoin/system/unicode/unicode.hpp>
-#include <bitcoin/system/unicode/unicode_ostream.hpp>
-#include <bitcoin/system/utility/assert.hpp>
-#include <bitcoin/system/utility/binary.hpp>
-#include <bitcoin/system/utility/collection.hpp>
-#include <bitcoin/system/utility/string.hpp>
-#include <bitcoin/system/utility/container_sink.hpp>
-#include <bitcoin/system/utility/ostream_writer.hpp>
-#include <bitcoin/system/wallet/electrum_dictionary.hpp>
+#include <nuls/system/define.hpp>
+#include <nuls/system/unicode/unicode.hpp>
+#include <nuls/system/unicode/unicode_ostream.hpp>
+#include <nuls/system/utility/assert.hpp>
+#include <nuls/system/utility/binary.hpp>
+#include <nuls/system/utility/collection.hpp>
+#include <nuls/system/utility/string.hpp>
+#include <nuls/system/utility/container_sink.hpp>
+#include <nuls/system/utility/ostream_writer.hpp>
+#include <nuls/system/wallet/electrum_dictionary.hpp>
 #include "../math/external/pkcs5_pbkdf2.h"
 
-namespace libbitcoin {
+namespace libnuls {
 namespace system {
 namespace wallet {
 namespace electrum {
@@ -563,4 +563,4 @@ long_hash decode_mnemonic(const word_list& mnemonic)
 } // namespace electrum
 } // namespace wallet
 } // namespace system
-} // namespace libbitcoin
+} // namespace libnuls

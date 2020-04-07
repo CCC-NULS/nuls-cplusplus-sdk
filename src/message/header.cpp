@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2011-2019 libbitcoin developers (see AUTHORS)
+ * Copyright (c) 2011-2019 libnuls developers (see AUTHORS)
  *
- * This file is part of libbitcoin.
+ * This file is part of libnuls.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -16,22 +16,22 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include <bitcoin/system/message/header.hpp>
+#include <nuls/system/message/header.hpp>
 
 #include <cstdint>
 #include <cstddef>
 #include <istream>
 #include <utility>
-#include <bitcoin/system/chain/header.hpp>
-#include <bitcoin/system/chain/transaction.hpp>
-#include <bitcoin/system/message/messages.hpp>
-#include <bitcoin/system/message/version.hpp>
-#include <bitcoin/system/utility/container_sink.hpp>
-#include <bitcoin/system/utility/container_source.hpp>
-#include <bitcoin/system/utility/istream_reader.hpp>
-#include <bitcoin/system/utility/ostream_writer.hpp>
+#include <nuls/system/chain/header.hpp>
+#include <nuls/system/chain/transaction.hpp>
+#include <nuls/system/message/messages.hpp>
+#include <nuls/system/message/version.hpp>
+#include <nuls/system/utility/container_sink.hpp>
+#include <nuls/system/utility/container_source.hpp>
+#include <nuls/system/utility/istream_reader.hpp>
+#include <nuls/system/utility/ostream_writer.hpp>
 
-namespace libbitcoin {
+namespace libnuls {
 namespace system {
 namespace message {
 
@@ -211,4 +211,4 @@ bool header::operator!=(const header& other) const
 
 } // namespace message
 } // namespace system
-} // namespace libbitcoin
+} // namespace libnuls

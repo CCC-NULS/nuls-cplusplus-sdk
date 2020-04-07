@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2011-2019 libbitcoin developers (see AUTHORS)
+ * Copyright (c) 2011-2019 libnuls developers (see AUTHORS)
  *
- * This file is part of libbitcoin.
+ * This file is part of libnuls.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -16,21 +16,21 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include <bitcoin/system/wallet/qrcode.hpp>
+#include <nuls/system/wallet/qrcode.hpp>
 
 #include <iostream>
 #include <string>
-#include <bitcoin/system/constants.hpp>
-#include <bitcoin/system/define.hpp>
-#include <bitcoin/system/utility/data.hpp>
-#include <bitcoin/system/utility/container_sink.hpp>
-#include <bitcoin/system/utility/container_source.hpp>
-#include <bitcoin/system/utility/istream_reader.hpp>
-#include <bitcoin/system/utility/ostream_writer.hpp>
+#include <nuls/system/constants.hpp>
+#include <nuls/system/define.hpp>
+#include <nuls/system/utility/data.hpp>
+#include <nuls/system/utility/container_sink.hpp>
+#include <nuls/system/utility/container_source.hpp>
+#include <nuls/system/utility/istream_reader.hpp>
+#include <nuls/system/utility/ostream_writer.hpp>
 
 #ifdef WITH_QRENCODE
 
-namespace libbitcoin {
+namespace libnuls {
 namespace system {
 namespace wallet {
 
@@ -92,6 +92,6 @@ bool qr::encode(std::istream& in, uint32_t version, error_recovery_level level,
 
 } // namespace wallet
 } // namespace system
-} // namespace libbitcoin
+} // namespace libnuls
 
 #endif // WITH_QRENCODE

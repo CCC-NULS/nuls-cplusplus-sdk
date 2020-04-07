@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2011-2019 libbitcoin developers (see AUTHORS)
+ * Copyright (c) 2011-2019 libnuls developers (see AUTHORS)
  *
- * This file is part of libbitcoin.
+ * This file is part of libnuls.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -19,13 +19,13 @@
 
 // Sponsored in part by Digital Contract Design, LLC
 
-#include <bitcoin/system/constants.hpp>
-#include <bitcoin/system/math/siphash.hpp>
-#include <bitcoin/system/utility/container_source.hpp>
-#include <bitcoin/system/utility/endian.hpp>
-#include <bitcoin/system/utility/istream_reader.hpp>
+#include <nuls/system/constants.hpp>
+#include <nuls/system/math/siphash.hpp>
+#include <nuls/system/utility/container_source.hpp>
+#include <nuls/system/utility/endian.hpp>
+#include <nuls/system/utility/istream_reader.hpp>
 
-namespace libbitcoin {
+namespace libnuls {
 namespace system {
 
 BC_CONSTEXPR uint64_t finalization = 0x00000000000000ff;
@@ -118,4 +118,4 @@ siphash_key to_siphash_key(const half_hash& hash)
 }
 
 } // namespace system
-} // namespace libbitcoin
+} // namespace libnuls

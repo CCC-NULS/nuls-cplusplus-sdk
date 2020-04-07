@@ -15,10 +15,10 @@
 
 // Modification of boost implementation to alter log file rotation naming.
 
-#include <bitcoin/system/log/file_counter_formatter.hpp>
-#include <bitcoin/system/log/file_char_traits.hpp>
+#include <nuls/system/log/file_counter_formatter.hpp>
+#include <nuls/system/log/file_char_traits.hpp>
 
-namespace libbitcoin {
+namespace libnuls {
 namespace system {
 namespace log {
 
@@ -66,4 +66,4 @@ bool file_counter_formatter::scan_seperator(path_string_type::const_iterator& it
 
 } // namespace log
 } // namespace system
-} // namespace libbitcoin
+} // namespace libnuls

@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2011-2019 libbitcoin developers (see AUTHORS)
+ * Copyright (c) 2011-2019 libnuls developers (see AUTHORS)
  *
- * This file is part of libbitcoin.
+ * This file is part of libnuls.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -16,20 +16,20 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include <bitcoin/system/wallet/bitcoin_uri.hpp>
+#include <nuls/system/wallet/bitcoin_uri.hpp>
 
 #include <cstddef>
 #include <cstdint>
 #include <iostream>
 #include <map>
 #include <boost/program_options.hpp>
-#include <bitcoin/system/formats/base_10.hpp>
-#include <bitcoin/system/wallet/payment_address.hpp>
-#include <bitcoin/system/wallet/stealth_address.hpp>
-#include <bitcoin/system/wallet/uri.hpp>
-#include <bitcoin/system/wallet/uri_reader.hpp>
+#include <nuls/system/formats/base_10.hpp>
+#include <nuls/system/wallet/payment_address.hpp>
+#include <nuls/system/wallet/stealth_address.hpp>
+#include <nuls/system/wallet/uri.hpp>
+#include <nuls/system/wallet/uri_reader.hpp>
 
-namespace libbitcoin {
+namespace libnuls {
 namespace system {
 namespace wallet {
 
@@ -300,4 +300,4 @@ std::ostream& operator<<(std::ostream& out, const bitcoin_uri& from)
 
 } // namespace wallet
 } // namespace system
-} // namespace libbitcoin
+} // namespace libnuls

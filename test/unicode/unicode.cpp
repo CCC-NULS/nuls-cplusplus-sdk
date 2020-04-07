@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2011-2019 libbitcoin developers (see AUTHORS)
+ * Copyright (c) 2011-2019 libnuls developers (see AUTHORS)
  *
- * This file is part of libbitcoin.
+ * This file is part of libnuls.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -21,7 +21,7 @@
 #include <stdexcept>
 #include <vector>
 #include <boost/test/unit_test.hpp>
-#include <bitcoin/system.hpp>
+#include <nuls/system.hpp>
 
 using namespace bc::system;
 
@@ -29,7 +29,7 @@ BOOST_AUTO_TEST_SUITE(unicode_tests)
 
 #ifdef WITH_ICU
 
-// github.com/bitcoin/bips/blob/master/bip-0038.mediawiki
+// github.com/nuls/bips/blob/master/bip-0038.mediawiki
 BOOST_AUTO_TEST_CASE(unicode__to_normal_nfc_form__validate__test)
 {
     data_chunk original;
@@ -57,7 +57,7 @@ BOOST_AUTO_TEST_CASE(unicode__to_normal_nfkd_form__61cc81__c3a1)
     const std::string literal_c3a1 = "á";
 
     // This is pasted from the the BIP39 encoding:
-    //// github.com/bitcoin/bips/blob/master/bip-0039/spanish.txt#L93
+    //// github.com/nuls/bips/blob/master/bip-0039/spanish.txt#L93
     const std::string literal_61cc81 = "á";
 
     const std::string string_c3a1 = "\xc3\xa1";

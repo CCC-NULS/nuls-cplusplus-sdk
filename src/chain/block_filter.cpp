@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2011-2019 libbitcoin developers (see AUTHORS)
+ * Copyright (c) 2011-2019 libnuls developers (see AUTHORS)
  *
- * This file is part of libbitcoin.
+ * This file is part of libnuls.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -19,13 +19,13 @@
 
 // Sponsored in part by Digital Contract Design, LLC
 
-#include <bitcoin/system/chain/block_filter.hpp>
+#include <nuls/system/chain/block_filter.hpp>
 
 #include <utility>
-#include <bitcoin/system/constants.hpp>
-#include <bitcoin/system/math/hash.hpp>
+#include <nuls/system/constants.hpp>
+#include <nuls/system/math/hash.hpp>
 
-namespace libbitcoin {
+namespace libnuls {
 namespace system {
 namespace chain {
 
@@ -182,4 +182,4 @@ void block_filter::reset()
 
 } // namespace chain
 } // namespace system
-} // namespace libbitcoin
+} // namespace libnuls

@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2011-2019 libbitcoin developers (see AUTHORS)
+ * Copyright (c) 2011-2019 libnuls developers (see AUTHORS)
  *
- * This file is part of libbitcoin.
+ * This file is part of libnuls.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -18,11 +18,11 @@
  */
 #include <numeric>
 #include <cstdint>
-#include <bitcoin/system/chain/point_value.hpp>
-#include <bitcoin/system/chain/points_value.hpp>
-#include <bitcoin/system/math/limits.hpp>
+#include <nuls/system/chain/point_value.hpp>
+#include <nuls/system/chain/points_value.hpp>
+#include <nuls/system/math/limits.hpp>
 
-namespace libbitcoin {
+namespace libnuls {
 namespace system {
 namespace chain {
 
@@ -38,4 +38,4 @@ uint64_t points_value::value() const
 
 } // namespace chain
 } // namespace system
-} // namespace libbitcoin
+} // namespace libnuls

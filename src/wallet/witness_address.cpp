@@ -37,10 +37,8 @@ namespace wallet {
 
 using namespace bc::system::machine;
 
-// BIP 173 prefix constants.
-// https://github.com/nuls/bips/blob/master/bip-0173.mediawiki#segwit-address-format
-const std::string witness_address::mainnet_prefix = "bc";
-const std::string witness_address::testnet_prefix = "tb";
+const std::string witness_address::mainnet_prefix = "NULS";
+const std::string witness_address::testnet_prefix = "tNULS";
 
 const size_t bech32_contracted_bit_size = 5;
 const size_t bech32_expanded_bit_size = 8;

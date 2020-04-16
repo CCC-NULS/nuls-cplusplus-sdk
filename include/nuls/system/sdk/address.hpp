@@ -16,19 +16,22 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef LIBNULS_SYSTEM_WALLET_WITNESS_ADDRESS_HPP
-#define LIBNULS_SYSTEM_WALLET_WITNESS_ADDRESS_HPP
+#ifndef LIBNULS_SYSTEM_SDK_ADDRESS_HPP
+#define LIBNULS_SYSTEM_SDK_ADDRESS_HPP
 
 #include <nuls/system/math/hash.hpp>
 #include <nuls/system/wallet/payment_address.hpp>
+#include <nuls/system/wallet/ec_private.hpp>
+#include <nuls/system/wallet/ec_public.hpp>
+
 
 namespace libnuls {
 namespace system {
-namespace wallet {
+namespace sdk {
 
 /// A class for working with standard witness payment addresses.
-class BC_API witness_address
-  : public payment_address
+class BC_API address
+  : public wallet::payment_address
 {
   public:
     enum class address_format: uint8_t
@@ -39,47 +42,49 @@ class BC_API witness_address
 
     static const std::string mainnet_prefix;
     static const std::string testnet_prefix;
+    static const uint8_t address_type = 0x01;
+    static const uint16_t mainnet_id = 0x0001;
 
-    typedef std::vector<witness_address> list;
-    typedef std::shared_ptr<witness_address> ptr;
+    typedef std::vector<address> list;
+    typedef std::shared_ptr<address> ptr;
 
     /// Constructors.
-    witness_address();
-    witness_address(witness_address&& other);
-    witness_address(const witness_address& other);
-    witness_address(const std::string& address,
+    address();
+    address(address&& other);
+    address(const address& other);
+    address(const std::string& address,
         address_format format=address_format::witness_pubkey_hash);
-    witness_address(short_hash&& hash,
+    address(short_hash&& hash,
         address_format format=address_format::witness_pubkey_hash,
         uint8_t witness_version=0, const std::string& prefix=mainnet_prefix);
-    witness_address(const short_hash& hash,
+    address(const short_hash& hash,
         address_format format=address_format::witness_pubkey_hash,
         uint8_t witness_version=0, const std::string& prefix=mainnet_prefix);
-    witness_address(hash_digest&& hash,
+    address(hash_digest&& hash,
         address_format format=address_format::witness_pubkey_hash,
         uint8_t witness_version=0, const std::string& prefix=mainnet_prefix);
-    witness_address(const hash_digest& hash,
+    address(const hash_digest& hash,
         address_format format=address_format::witness_pubkey_hash,
         uint8_t witness_version=0, const std::string& prefix=mainnet_prefix);
-    witness_address(const chain::script& script,
+    address(const chain::script& script,
         address_format format=address_format::witness_pubkey_hash,
         const std::string& prefix=mainnet_prefix);
-    witness_address(const ec_private& secret,
+    address(const wallet::ec_private& secret,
         address_format format=address_format::witness_pubkey_hash,
         const std::string& prefix=mainnet_prefix);
-    witness_address(const ec_public& point,
+    address(const wallet::ec_public& point,
         address_format format=address_format::witness_pubkey_hash,
         const std::string& prefix=mainnet_prefix);
 
     /// Operators.
-    bool operator<(const witness_address& other) const;
-    bool operator==(const witness_address& other) const;
-    bool operator!=(const witness_address& other) const;
-    witness_address& operator=(const witness_address& other);
+    bool operator<(const address& other) const;
+    bool operator==(const address& other) const;
+    bool operator!=(const address& other) const;
+    address& operator=(const address& other);
     friend std::istream& operator>>(std::istream& in,
-        witness_address& to);
+        address& to);
     friend std::ostream& operator<<(std::ostream& out,
-        const witness_address& of);
+        const address& of);
 
     /// Cast operators.
     operator bool() const;
@@ -102,16 +107,16 @@ private:
     static bool is_address(data_slice decoded);
 
     /// Factories.
-    static witness_address from_string(const std::string& address,
+    static address from_string(const std::string& address,
         address_format format=address_format::witness_pubkey_hash,
         const std::string& prefix=mainnet_prefix);
-    static witness_address from_script(const chain::script& script,
+    static address from_script(const chain::script& script,
         address_format format=address_format::witness_pubkey_hash,
         const std::string& prefix=mainnet_prefix);
-    static witness_address from_private(const ec_private& secret,
+    static address from_private(const wallet::ec_private& secret,
         address_format format=address_format::witness_pubkey_hash,
         const std::string& prefix=mainnet_prefix);
-    static witness_address from_public(const ec_public& point,
+    static address from_public(const wallet::ec_public& point,
         address_format format=address_format::witness_pubkey_hash,
         const std::string& prefix=mainnet_prefix);
 
@@ -121,17 +126,17 @@ private:
     hash_digest witness_hash_;
 };
 
-} // namespace wallet
+} // namespace sdk
 } // namespace system
 } // namespace libnuls
 
-// Allow witness_address to be in indexed in std::*map classes.
+// Allow address to be in indexed in std::*map classes.
 namespace std
 {
 template <>
-struct hash<nuls::system::wallet::witness_address>
+struct hash<nuls::system::sdk::address>
 {
-    size_t operator()(const nuls::system::wallet::witness_address& address) const
+    size_t operator()(const nuls::system::sdk::address& address) const
     {
         return address.witness_hash() == nuls::system::null_hash ?
             std::hash<nuls::system::short_hash>()(address.hash()) :

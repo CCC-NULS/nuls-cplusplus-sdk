@@ -32,7 +32,7 @@ namespace libnuls {
 namespace system {
 namespace chain {
 
-using namespace bc::system::wallet;
+using namespace nuls::system::wallet;
 
 // This is a consensus critical value that must be set on reset.
 const uint64_t output::not_found = sighash_null_value;

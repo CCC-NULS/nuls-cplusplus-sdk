@@ -62,7 +62,7 @@ static std::once_flag icu_mutex;
 
 #endif
 
-// Static initializer for bc::system::cin.
+// Static initializer for nuls::system::cin.
 std::istream& cin_stream()
 {
     std::call_once(io_mutex, console_streambuf::initialize, utf16_buffer_size);
@@ -70,7 +70,7 @@ std::istream& cin_stream()
     return input;
 }
 
-// Static initializer for bc::system::cout.
+// Static initializer for nuls::system::cout.
 std::ostream& cout_stream()
 {
     std::call_once(io_mutex, console_streambuf::initialize, utf16_buffer_size);
@@ -78,7 +78,7 @@ std::ostream& cout_stream()
     return output;
 }
 
-// Static initializer for bc::system::cerr.
+// Static initializer for nuls::system::cerr.
 std::ostream& cerr_stream()
 {
     std::call_once(io_mutex, console_streambuf::initialize, utf16_buffer_size);

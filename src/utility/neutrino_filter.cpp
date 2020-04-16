@@ -66,7 +66,7 @@ bool compute_filter(const chain::block& validated_block, data_chunk& out_filter)
     }
 
     // Remove duplicates.
-    bc::system::distinct(items);
+    nuls::system::distinct(items);
 
     data_sink stream(out_filter);
     ostream_writer writer(stream);

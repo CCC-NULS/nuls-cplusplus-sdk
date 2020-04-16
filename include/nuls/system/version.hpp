@@ -12,8 +12,8 @@
  * For interpretation of the versioning scheme see: http://semver.org
  */
 
-#define LIBNULS_SYSTEM_VERSION "4.0.0"
-#define LIBNULS_SYSTEM_MAJOR_VERSION 4
+#define LIBNULS_SYSTEM_VERSION "2.0.0"
+#define LIBNULS_SYSTEM_MAJOR_VERSION 2
 #define LIBNULS_SYSTEM_MINOR_VERSION 0
 #define LIBNULS_SYSTEM_PATCH_VERSION 0
 

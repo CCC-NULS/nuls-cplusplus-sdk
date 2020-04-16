@@ -32,8 +32,8 @@
 
 BOOST_AUTO_TEST_SUITE(number_tests)
 
-using namespace bc::system;
-using namespace bc::system::machine;
+using namespace nuls::system;
+using namespace nuls::system::machine;
 
 // Helpers
 // ----------------------------------------------------------------------------

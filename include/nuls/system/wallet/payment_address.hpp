@@ -136,11 +136,11 @@ struct BC_API wrapped_data
 namespace std
 {
 template <>
-struct hash<bc::system::wallet::payment_address>
+struct hash<nuls::system::wallet::payment_address>
 {
-    size_t operator()(const bc::system::wallet::payment_address& address) const
+    size_t operator()(const nuls::system::wallet::payment_address& address) const
     {
-        return std::hash<bc::system::short_hash>()(address.hash());
+        return std::hash<nuls::system::short_hash>()(address.hash());
     }
 };
 

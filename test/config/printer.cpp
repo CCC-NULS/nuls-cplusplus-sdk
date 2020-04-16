@@ -25,7 +25,7 @@
 #include <nuls/system.hpp>
 
 namespace po = boost::program_options;
-using namespace bc::system::config;
+using namespace nuls::system::config;
 
 BOOST_AUTO_TEST_SUITE(printer_tests)
 

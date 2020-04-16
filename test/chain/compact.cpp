@@ -23,8 +23,8 @@
 
 BOOST_AUTO_TEST_SUITE(compact_tests)
 
-using namespace bc::system;
-using namespace bc::system::chain;
+using namespace nuls::system;
+using namespace nuls::system::chain;
 
 #define PRIMES "020305070b0d1113171d1f25292b2f353b3d4347494f53596165676b6d717f83"
 static const auto primes = hash_literal(PRIMES);

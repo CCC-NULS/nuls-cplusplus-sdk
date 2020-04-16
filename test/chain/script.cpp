@@ -22,9 +22,9 @@
 #include <nuls/system.hpp>
 #include "script.hpp"
 
-using namespace bc::system;
-using namespace bc::system::chain;
-using namespace bc::system::machine;
+using namespace nuls::system;
+using namespace nuls::system::chain;
+using namespace nuls::system::machine;
 
 #define SCRIPT_RETURN "return"
 #define SCRIPT_RETURN_EMPTY "return []"

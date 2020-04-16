@@ -48,7 +48,7 @@ bool deserialize(std::vector<Value>& out_collection, const std::string& text,
     bool trim)
 {
     // This had problems with the inclusion of the ideographic (CJK) space
-    // (0xe3, 0x80, 0x80). Need to infuse the local in bc::system::split().
+    // (0xe3, 0x80, 0x80). Need to infuse the local in nuls::system::split().
     const auto tokens = split(text, " \n\r\t");
     for (const auto& token: tokens)
     {

@@ -39,7 +39,7 @@ namespace config {
 // Therefore this must be compiled directly into the relevant project(s).
 #ifdef _MSC_VER
     #define BC_DECLARE_CONFIG_DEFAULT_PATH(relative) \
-        CONFIG_DEFAULT_PATH(bc::system::config::windows_config_directory(),\
+        CONFIG_DEFAULT_PATH(nuls::system::config::windows_config_directory(),\
         relative)
 #else
     #define BC_DECLARE_CONFIG_DEFAULT_PATH(relative) \

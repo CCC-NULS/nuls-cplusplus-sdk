@@ -20,8 +20,8 @@
 #include <nuls/system.hpp>
 
 using namespace bc;
-using namespace bc::system;
-using namespace bc::system::wallet;
+using namespace nuls::system;
+using namespace nuls::system::wallet;
 
 // $ bx base16-encode "Satoshi" | bx sha256
 #define SECRET "002688cc350a5333a87fa622eacec626c3d1c0ebf9f3793de3885fa254d7e393"

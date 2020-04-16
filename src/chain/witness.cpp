@@ -43,7 +43,7 @@ namespace libnuls {
 namespace system {
 namespace chain {
 
-using namespace bc::system::machine;
+using namespace nuls::system::machine;
 
 // Constructors.
 //-----------------------------------------------------------------------------

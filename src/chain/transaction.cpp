@@ -48,7 +48,7 @@ namespace libnuls {
 namespace system {
 namespace chain {
 
-using namespace bc::system::machine;
+using namespace nuls::system::machine;
 
 #define RETURN_CACHED(name, type, context) \
     hash_mutex_.lock_upgrade(); \

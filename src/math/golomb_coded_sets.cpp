@@ -61,7 +61,7 @@ static uint64_t golomb_decode(bit_reader& source, uint8_t modulo_exponent)
 static uint64_t hash_to_range(const data_slice& item, uint64_t bound,
     const siphash_key& key)
 {
-    static const auto range_shift = sizeof(uint64_t) * bc::byte_bits;
+    static const auto range_shift = sizeof(uint64_t) * nuls::byte_bits;
 
     return static_cast<uint64_t>((
         static_cast<uint128_t>(siphash(key, item)) *

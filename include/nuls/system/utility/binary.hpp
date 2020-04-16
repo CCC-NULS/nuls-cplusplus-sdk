@@ -82,9 +82,9 @@ namespace std
 {
 
 template<>
-struct hash<bc::system::binary>
+struct hash<nuls::system::binary>
 {
-    size_t operator()(const bc::system::binary& value) const
+    size_t operator()(const nuls::system::binary& value) const
     {
         return std::hash<std::string>()(value.encoded());
     }

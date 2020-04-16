@@ -20,7 +20,7 @@
 #include <nuls/system.hpp>
 
 using namespace bc;
-using namespace bc::system;
+using namespace nuls::system;
 
 // Test helper.
 static bool all_valid(const chain::transaction::list& transactions)

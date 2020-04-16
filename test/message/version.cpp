@@ -19,7 +19,7 @@
 #include <boost/test/unit_test.hpp>
 #include <nuls/system.hpp>
 
-using namespace bc::system;
+using namespace nuls::system;
 
 static const auto version_maximum = message::version::level::maximum;
 

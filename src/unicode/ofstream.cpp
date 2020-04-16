@@ -25,7 +25,7 @@
 namespace libnuls {
 namespace system {
 
-// Construct bc::system::ofstream.
+// Construct nuls::system::ofstream.
 ofstream::ofstream(const std::string& path, std::ofstream::openmode mode)
 #ifdef _MSC_VER
   : std::ofstream(system::to_utf16(path), mode)

@@ -27,17 +27,17 @@ namespace std {
 
 template <size_t Size>
 std::ostream& operator<<(std::ostream& stream,
-    const bc::system::byte_array<Size>& bytes)
+    const nuls::system::byte_array<Size>& bytes)
 {
-    stream << bc::system::encode_base16(bytes);
+    stream << nuls::system::encode_base16(bytes);
     return stream;
 }
 
 std::ostream& operator<<(std::ostream& stream,
-    const bc::system::hash_digest& hash);
+    const nuls::system::hash_digest& hash);
 
 std::ostream& operator<<(std::ostream& stream,
-    const bc::system::data_chunk& data);
+    const nuls::system::data_chunk& data);
 
 } // namespace std
 

@@ -44,7 +44,7 @@ namespace libnuls {
 namespace system {
 namespace log {
 
-using namespace bc::system::config;
+using namespace nuls::system::config;
 using namespace boost::asio::ip;
 using namespace boost::log;
 using namespace boost::log::expressions;

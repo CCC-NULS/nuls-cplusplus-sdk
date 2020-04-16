@@ -53,7 +53,7 @@ namespace libnuls {
 namespace system {
 namespace chain {
 
-using namespace bc::system::machine;
+using namespace nuls::system::machine;
 using namespace boost::adaptors;
 
 // bit.ly/2cPazSa

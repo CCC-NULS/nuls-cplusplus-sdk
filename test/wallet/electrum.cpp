@@ -20,8 +20,8 @@
 #include <boost/test/unit_test.hpp>
 #include <nuls/system.hpp>
 
-using namespace bc::system;
-using namespace bc::system::wallet;
+using namespace nuls::system;
+using namespace nuls::system::wallet;
 
 BOOST_AUTO_TEST_SUITE(electrum_tests)
 

@@ -95,7 +95,7 @@ ec_scalar& ec_scalar::operator=(uint64_t value)
     auto value_iterator = secret_->end() - value_size;
 
     // Write last value_size bytes with value.
-    auto serial = bc::system::make_unsafe_serializer(value_iterator);
+    auto serial = nuls::system::make_unsafe_serializer(value_iterator);
     serial.write_8_bytes_big_endian(value);
     return *this;
 }

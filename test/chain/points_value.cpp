@@ -19,8 +19,8 @@
 #include <boost/test/unit_test.hpp>
 #include <nuls/system.hpp>
 
-using namespace bc::system;
-using namespace bc::system::chain;
+using namespace nuls::system;
+using namespace nuls::system::chain;
 
 BOOST_AUTO_TEST_SUITE(points_value_tests)
 

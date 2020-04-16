@@ -272,13 +272,13 @@ BC_API error_code_t posix_to_error_code(int ec);
 namespace std {
 
 template <>
-struct is_error_code_enum<bc::system::error::error_code_t>
+struct is_error_code_enum<nuls::system::error::error_code_t>
   : public true_type
 {
 };
 
 template <>
-struct is_error_condition_enum<bc::system::error::error_condition_t>
+struct is_error_condition_enum<nuls::system::error::error_condition_t>
   : public true_type
 {
 };

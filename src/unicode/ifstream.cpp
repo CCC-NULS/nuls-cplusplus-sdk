@@ -25,7 +25,7 @@
 namespace libnuls {
 namespace system {
 
-// Construct bc::system::ifstream.
+// Construct nuls::system::ifstream.
 ifstream::ifstream(const std::string& path, std::ifstream::openmode mode)
 #ifdef _MSC_VER
   : std::ifstream(system::to_utf16(path), mode)

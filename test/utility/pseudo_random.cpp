@@ -19,7 +19,7 @@
 #include <nuls/system.hpp>
 #include <boost/test/unit_test.hpp>
 
-using namespace bc::system;
+using namespace nuls::system;
 
 BOOST_AUTO_TEST_SUITE(pseudo_random_tests)
 

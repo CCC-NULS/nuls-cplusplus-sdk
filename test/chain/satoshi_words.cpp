@@ -19,7 +19,7 @@
 #include <boost/test/unit_test.hpp>
 #include <nuls/system.hpp>
 
-using namespace bc::system;
+using namespace nuls::system;
 
 // TODO: move this into the tests by source file organization.
 BOOST_AUTO_TEST_SUITE(satoshi_words)

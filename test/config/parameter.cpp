@@ -26,8 +26,8 @@
 #include <nuls/system.hpp>
 
 namespace po = boost::program_options;
-using namespace bc::system;
-using namespace bc::system::config;
+using namespace nuls::system;
+using namespace nuls::system::config;
 
 enum opt
 {

@@ -29,7 +29,7 @@
 namespace libnuls {
 namespace system {
 
-using namespace bc::system::asio;
+using namespace nuls::system::asio;
 using namespace std::chrono;
 
 // DO NOT USE srand() and rand() on MSVC as srand must be called per thread.

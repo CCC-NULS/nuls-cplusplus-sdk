@@ -19,8 +19,8 @@
 #include <boost/test/unit_test.hpp>
 #include <nuls/system.hpp>
 
-using namespace bc::system;
-using namespace bc::system::machine;
+using namespace nuls::system;
+using namespace nuls::system::machine;
 
 BOOST_AUTO_TEST_SUITE(opcode_tests)
 

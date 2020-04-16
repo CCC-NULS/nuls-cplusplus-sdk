@@ -24,16 +24,16 @@
 namespace std {
 
 std::ostream& operator<<(std::ostream& stream,
-    const bc::system::hash_digest& hash)
+    const nuls::system::hash_digest& hash)
 {
-    stream << bc::system::encode_hash(hash);
+    stream << nuls::system::encode_hash(hash);
     return stream;
 }
 
 std::ostream& operator<<(std::ostream& stream,
-    const bc::system::data_chunk& data)
+    const nuls::system::data_chunk& data)
 {
-    stream << bc::system::encode_base16(data);
+    stream << nuls::system::encode_base16(data);
     return stream;
 }
 

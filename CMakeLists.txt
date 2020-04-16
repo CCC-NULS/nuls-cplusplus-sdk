@@ -11,7 +11,7 @@ ExternalProject_Add(
     nlohmann_json
     PREFIX "nlohmann"
     URL https://github.com/nlohmann/json/releases/download/v3.5.0/include.zip
-    URL_HASH SHA256=3564da9c5b0cf2e032f97c69baedf10ddbc98030c337d0327a215ea72259ea21
+    #URL_HASH SHA256=3564da9c5b0cf2e032f97c69baedf10ddbc98030c337d0327a215ea72259ea21
     CONFIGURE_COMMAND ""
     BUILD_COMMAND ""
     INSTALL_COMMAND ""
@@ -23,7 +23,7 @@ ExternalProject_Add(
     pcg
     PREFIX "pcg"
     URL http://www.pcg-random.org/downloads/pcg-cpp-0.98.zip
-    URL_HASH SHA256=de46a88aad4dfe54ef53f66beba56fd0ab3e94aaaa9860cd828b3f1daee13aaf
+    #URL_HASH SHA256=de46a88aad4dfe54ef53f66beba56fd0ab3e94aaaa9860cd828b3f1daee13aaf
     CONFIGURE_COMMAND ""
     BUILD_COMMAND ""
     INSTALL_COMMAND ""
@@ -47,7 +47,7 @@ set(SECP256K1_INCLUDE_DIR ${SOURCE_DIR}/include)
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 
-file(GLOB_RECURSE sources src/crypto/*.c src/crypto/*.h src/*.cpp src/*.h include/*.hpp include/nuls/*.hpp)
+file(GLOB_RECURSE sources src/*.cpp src/*.h include/*.hpp include/nuls/*.hpp)
 # dynamic library
 add_library(NULS SHARED ${sources})
 # static library

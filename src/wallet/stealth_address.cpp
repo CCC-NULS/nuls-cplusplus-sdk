@@ -35,7 +35,7 @@ namespace libnuls {
 namespace system {
 namespace wallet {
 
-using namespace bc::system::chain;
+using namespace nuls::system::chain;
 
 static constexpr uint8_t version_size = sizeof(uint8_t);
 static constexpr uint8_t options_size = sizeof(uint8_t);

@@ -47,34 +47,34 @@ class BC_API statsd_source
 BOOST_LOG_INLINE_GLOBAL_LOGGER_DEFAULT(stats, statsd_source)
 
 #define BC_STATS_SIMPLE(name, sequence) \
-    BOOST_LOG_WITH_PARAMS(bc::system::log::stats::get(), \
-        (bc::system::log::keywords::metric = (name))sequence)
+    BOOST_LOG_WITH_PARAMS(nuls::system::log::stats::get(), \
+        (nuls::system::log::keywords::metric = (name))sequence)
 
 #define BC_STATS_WITH_RATE(name, rate, sequence) \
-    BOOST_LOG_WITH_PARAMS(bc::system::log::stats::get(), \
-        (bc::system::log::keywords::metric = (name)) \
-        (bc::system::log::keywords::rate = (rate))sequence)
+    BOOST_LOG_WITH_PARAMS(nuls::system::log::stats::get(), \
+        (nuls::system::log::keywords::metric = (name)) \
+        (nuls::system::log::keywords::rate = (rate))sequence)
 
 #define BC_STATS_COUNTER(name, value) \
-    BC_STATS_SIMPLE(name, (bc::system::log::keywords::counter = (value)))
+    BC_STATS_SIMPLE(name, (nuls::system::log::keywords::counter = (value)))
 
 #define BC_STATS_COUNTER_RATE(name, value, rate) \
     BC_STATS_WITH_RATE(name, rate, \
-    (bc::system::log::keywords::counter = (value)))
+    (nuls::system::log::keywords::counter = (value)))
 
 #define BC_STATS_GAUGE(name, value) \
-    BC_STATS_SIMPLE(name, (bc::system::log::keywords::gauge = (value)))
+    BC_STATS_SIMPLE(name, (nuls::system::log::keywords::gauge = (value)))
 
 #define BC_STATS_GAUGE_RATE(name, value, rate) \
     BC_STATS_WITH_RATE(name, rate, \
-    (bc::system::log::keywords::gauge = (value)))
+    (nuls::system::log::keywords::gauge = (value)))
 
 #define BC_STATS_TIMER(name, value) \
-    BC_STATS_SIMPLE(name, (bc::system::log::keywords::timer = (value)))
+    BC_STATS_SIMPLE(name, (nuls::system::log::keywords::timer = (value)))
 
 #define BC_STATS_TIMER_RATE(name, value, rate) \
     BC_STATS_WITH_RATE(name, rate, \
-    (bc::system::log::keywords::timer = (value)))
+    (nuls::system::log::keywords::timer = (value)))
 
 } // namespace log
 } // namespace system

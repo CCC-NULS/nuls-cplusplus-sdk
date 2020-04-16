@@ -21,7 +21,7 @@
 #include <string>
 #include <nuls/system.hpp>
 
-using namespace bc::system;
+using namespace nuls::system;
 
 BOOST_AUTO_TEST_SUITE(base_32_tests)
 

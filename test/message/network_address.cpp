@@ -19,7 +19,7 @@
 #include <boost/test/unit_test.hpp>
 #include <nuls/system.hpp>
 
-using namespace bc::system;
+using namespace nuls::system;
 
 bool equal(const message::network_address& left,
     const message::network_address& right, bool with_timestamp)

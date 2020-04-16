@@ -29,7 +29,7 @@ namespace libnuls {
 namespace system {
 namespace machine {
 
-using namespace bc::system::chain;
+using namespace nuls::system::chain;
 
 #define RETURN_IF_OPCODE(text, code) \
 if (norm == text) { out_code = opcode::code; return true; }

@@ -42,8 +42,8 @@ namespace libnuls {
 namespace system {
 namespace chain {
 
-using namespace bc::system::config;
-using namespace bc::system::machine;
+using namespace nuls::system::config;
+using namespace nuls::system::machine;
 using namespace boost::adaptors;
 
 // Inlines.

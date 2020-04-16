@@ -50,10 +50,10 @@
 
 // Regarding Unicode in console applications:
 //
-// BC_USE_LIBNULS_MAIN should be declared prior to bc::system::main() in a
+// BC_USE_LIBNULS_MAIN should be declared prior to nuls::system::main() in a
 // console application. This enables Unicode argument and environment
 // processing in Windows. This macro implements main() and forwards to
-// bc::system::main(), which should be implemented as if it was main() with
+// nuls::system::main(), which should be implemented as if it was main() with
 // the expectation that argv is utf8.
 //
 // Do not use std::cout|std::cerr|std::cin (aborts on assertion):
@@ -101,13 +101,13 @@
             boost::filesystem::path::imbue(std::locale()); \
             \
             auto environment = environ; \
-            environ = bc::system::allocate_environment(_wenviron); \
+            environ = nuls::system::allocate_environment(_wenviron); \
             \
-            auto arguments = bc::system::allocate_environment(argc, argv); \
+            auto arguments = nuls::system::allocate_environment(argc, argv); \
             const auto result = libnuls::system::main(argc, arguments); \
             \
-            bc::system::free_environment(arguments); \
-            bc::system::free_environment(environ); \
+            nuls::system::free_environment(arguments); \
+            nuls::system::free_environment(environ); \
             environ = environment; \
             return result; \
         }
@@ -132,17 +132,17 @@ namespace libnuls {
 namespace system {
 
 /**
- * Use bc::system::cin in place of std::cin, see BC_USE_LIBNULS_MAIN.
+ * Use nuls::system::cin in place of std::cin, see BC_USE_LIBNULS_MAIN.
  */
 std::istream& cin_stream();
 
 /**
- * Use bc::system::cout in place of std::cout, see BC_USE_LIBNULS_MAIN.
+ * Use nuls::system::cout in place of std::cout, see BC_USE_LIBNULS_MAIN.
  */
 std::ostream& cout_stream();
 
 /**
- * Use bc::system::cerr in place of std::cerr, see BC_USE_LIBNULS_MAIN.
+ * Use nuls::system::cerr in place of std::cerr, see BC_USE_LIBNULS_MAIN.
  */
 std::ostream& cerr_stream();
 
@@ -245,19 +245,19 @@ BC_API void set_utf8_stdio();
 
 /**
  * Initialize windows to use UTF8 for stdin. This cannot be uninitialized and
- * once set bc::system::cin must be used in place of std::cin.
+ * once set nuls::system::cin must be used in place of std::cin.
  */
 BC_API void set_utf8_stdin();
 
 /**
  * Initialize windows to use UTF8 for stdout. This cannot be uninitialized and
- * once set bc::system::cout must be used in place of std::cout.
+ * once set nuls::system::cout must be used in place of std::cout.
  */
 BC_API void set_utf8_stdout();
 
 /**
  * Initialize windows to use UTF8 for stderr. This cannot be uninitialized and
- * once set bc::system::cerr must be used in place of std::cerr.
+ * once set nuls::system::cerr must be used in place of std::cerr.
  */
 BC_API void set_utf8_stderr();
 

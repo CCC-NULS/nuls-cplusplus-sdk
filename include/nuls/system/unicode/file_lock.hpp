@@ -157,14 +157,14 @@ extern "C" __declspec(dllimport) void * __stdcall CreateFileW(const wchar_t *, u
 inline void* CreateFileUTF8(const std::string& name, unsigned long access, unsigned long mode,
     struct boost::interprocess::winapi::interprocess_security_attributes *psec, unsigned long creation, unsigned long attributes, void *ptemplate)
 {
-    return CreateFileW(bc::system::to_utf16(name).c_str(), access, mode, psec, creation, attributes, ptemplate);
+    return CreateFileW(nuls::system::to_utf16(name).c_str(), access, mode, psec, creation, attributes, ptemplate);
 }
 
 // ADAPTED FROM boost/interprocess/winapi/win32_api.hpp UNDER SAME LICENSE AS ABOVE.
 inline void *create_file(const std::string& name, unsigned long access, unsigned long creation_flags, unsigned long attributes, boost::interprocess::winapi::interprocess_security_attributes *psec)
 {
     for (unsigned int attempt(0); attempt < boost::interprocess::winapi::error_sharing_violation_tries; ++attempt){
-        void * const handle = bc::system::interprocess::CreateFileUTF8(name, access,
+        void * const handle = nuls::system::interprocess::CreateFileUTF8(name, access,
             boost::interprocess::winapi::file_share_read | boost::interprocess::winapi::file_share_write | boost::interprocess::winapi::file_share_delete,
             psec, creation_flags, attributes, 0);
         bool const invalid(boost::interprocess::winapi::invalid_handle_value == handle);
@@ -184,7 +184,7 @@ inline boost::interprocess::file_handle_t open_existing_file
 (const std::string& name, boost::interprocess::mode_t mode, bool temporary = false)
 {
     unsigned long attr = temporary ? boost::interprocess::winapi::file_attribute_temporary : 0;
-    return bc::system::interprocess::create_file
+    return nuls::system::interprocess::create_file
         (name, (unsigned int)mode, boost::interprocess::winapi::open_existing, attr, 0);
 }
 
@@ -194,7 +194,7 @@ inline boost::interprocess::file_handle_t open_existing_file
 inline file_lock::file_lock(const std::string& name)
 {
 #ifdef _MSC_VER
-    m_file_hnd = bc::system::interprocess::open_existing_file(name, boost::interprocess::read_write);
+    m_file_hnd = nuls::system::interprocess::open_existing_file(name, boost::interprocess::read_write);
 #else
     m_file_hnd = boost::interprocess::ipcdetail::open_existing_file(name.c_str(), boost::interprocess::read_write);
 #endif

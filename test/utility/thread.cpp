@@ -37,7 +37,7 @@
     #define THREAD_PRIORITY_LOWEST PRIO_MAX
 #endif
 
-using namespace bc::system;
+using namespace nuls::system;
 
 BOOST_AUTO_TEST_SUITE(thread_tests)
 

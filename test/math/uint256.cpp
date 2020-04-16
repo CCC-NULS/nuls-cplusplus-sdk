@@ -22,7 +22,7 @@
 #include <string>
 #include <nuls/system.hpp>
 
-using namespace bc::system;
+using namespace nuls::system;
 
 BOOST_AUTO_TEST_SUITE(uint256_tests)
 
@@ -107,7 +107,7 @@ BOOST_AUTO_TEST_CASE(uint256__constructor_uint32__42__equals_42)
 
 BOOST_AUTO_TEST_CASE(uint256__constructor_uint32__maximum__equals_maximum)
 {
-    static const auto expected = bc::max_uint32;
+    static const auto expected = nuls::max_uint32;
     static const uint256_t value(expected);
     BOOST_REQUIRE_EQUAL(value, expected);
 }
@@ -292,7 +292,7 @@ BOOST_AUTO_TEST_CASE(uint256__shift_right__null_hash__null_hash)
 {
     BOOST_REQUIRE_EQUAL(uint256_t() >> 0, uint256_t());
     BOOST_REQUIRE_EQUAL(uint256_t() >> 1, uint256_t());
-    BOOST_REQUIRE_EQUAL(uint256_t() >> bc::max_uint32, uint256_t());
+    BOOST_REQUIRE_EQUAL(uint256_t() >> nuls::max_uint32, uint256_t());
 }
 
 BOOST_AUTO_TEST_CASE(uint256__shift_right__unit_hash_0__unit_hash)
@@ -305,7 +305,7 @@ BOOST_AUTO_TEST_CASE(uint256__shift_right__unit_hash_positive__null_hash)
 {
     static const uint256_t value(unit_hash);
     BOOST_REQUIRE_EQUAL(value >> 1, uint256_t());
-    BOOST_REQUIRE_EQUAL(value >> bc::max_uint32, uint256_t());
+    BOOST_REQUIRE_EQUAL(value >> nuls::max_uint32, uint256_t());
 }
 
 BOOST_AUTO_TEST_CASE(uint256__shift_right__max_hash_1__most_hash)
@@ -456,7 +456,7 @@ BOOST_AUTO_TEST_CASE(uint256__assign_shift_right__null_hash__null_hash)
     uint256_t value3;
     value1 >>= 0;
     value2 >>= 1;
-    value3 >>= bc::max_uint32;
+    value3 >>= nuls::max_uint32;
     BOOST_REQUIRE_EQUAL(value1, uint256_t());
     BOOST_REQUIRE_EQUAL(value2, uint256_t());
     BOOST_REQUIRE_EQUAL(value3, uint256_t());
@@ -474,7 +474,7 @@ BOOST_AUTO_TEST_CASE(uint256__assign_shift_right__unit_hash_positive__null_hash)
     uint256_t value1(unit_hash);
     uint256_t value2(unit_hash);
     value1 >>= 1;
-    value2 >>= bc::max_uint32;
+    value2 >>= nuls::max_uint32;
     BOOST_REQUIRE_EQUAL(value1, uint256_t());
     BOOST_REQUIRE_EQUAL(value2, uint256_t());
 }
@@ -503,7 +503,7 @@ BOOST_AUTO_TEST_CASE(uint256__assign_shift_left__null_hash__null_hash)
     uint256_t value3;
     value1 <<= 0;
     value2 <<= 1;
-    value3 <<= bc::max_uint32;
+    value3 <<= nuls::max_uint32;
     BOOST_REQUIRE_EQUAL(value1, uint256_t());
     BOOST_REQUIRE_EQUAL(value2, uint256_t());
     BOOST_REQUIRE_EQUAL(value3, uint256_t());
@@ -592,7 +592,7 @@ BOOST_AUTO_TEST_CASE(uint256__assign_multiply32__fives_hash_by_3__max_hash)
 BOOST_AUTO_TEST_CASE(uint256__assign_multiply32__ones_hash_by_max_uint32__max_hash)
 {
     uint256_t value(ones_hash);
-    value *= bc::max_uint32;
+    value *= nuls::max_uint32;
     BOOST_REQUIRE_EQUAL(value, uint256_t(max_hash));
 }
 
@@ -629,7 +629,7 @@ BOOST_AUTO_TEST_CASE(uint256__assign_divide32__max_hash_by_3__fives_hash)
 BOOST_AUTO_TEST_CASE(uint256__assign_divide32__max_hash_by_max_uint32__ones_hash)
 {
     uint256_t value(max_hash);
-    value /= bc::max_uint32;
+    value /= nuls::max_uint32;
     BOOST_REQUIRE_EQUAL(value, uint256_t(ones_hash));
 }
 

@@ -22,7 +22,7 @@
 #include <boost/system/error_code.hpp>
 #include <nuls/system/compat.hpp>
 
-using namespace bc::system;
+using namespace nuls::system;
 
 class error_category_impl
   : public std::error_category

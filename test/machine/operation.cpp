@@ -19,8 +19,8 @@
 #include <boost/test/unit_test.hpp>
 #include <nuls/system.hpp>
 
-using namespace bc::system;
-using namespace bc::system::machine;
+using namespace nuls::system;
+using namespace nuls::system::machine;
 
 data_chunk valid_raw_operation = to_chunk(base16_literal("0900ff11ee22bb33aa44"));
 

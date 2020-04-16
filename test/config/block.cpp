@@ -22,7 +22,7 @@
 #include <boost/test/unit_test.hpp>
 #include <nuls/system.hpp>
 
-using namespace bc::system::config;
+using namespace nuls::system::config;
 
 BOOST_AUTO_TEST_SUITE(block_tests)
 

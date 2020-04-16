@@ -19,7 +19,7 @@
 #include <boost/test/unit_test.hpp>
 #include <nuls/system.hpp>
 
-using namespace bc::system;
+using namespace nuls::system;
 
 // TODO: split out individual functions and standardize test names.
 BOOST_AUTO_TEST_SUITE(stealth_tests)

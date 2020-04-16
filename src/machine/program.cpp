@@ -31,7 +31,7 @@ namespace libnuls {
 namespace system {
 namespace machine {
 
-using namespace bc::system::chain;
+using namespace nuls::system::chain;
 
 static const chain::transaction default_tx_;
 static const chain::script default_script_;

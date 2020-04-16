@@ -23,7 +23,7 @@
 #include <boost/test/unit_test.hpp>
 #include <nuls/system.hpp>
 
-using namespace bc::system;
+using namespace nuls::system;
 
 struct prevout_data
 {
@@ -3458,7 +3458,7 @@ BOOST_AUTO_TEST_CASE(compute_filter__block_1414221__success)
 BOOST_AUTO_TEST_CASE(match_filter_1__input_prevout__return_true)
 {
     const message::compact_filter filter(
-        bc::neutrino_filter_type,
+        nuls::neutrino_filter_type,
         hash_literal("00000000fd3ceb2404ff07a785c7fdcc76619edc8ed61bd25134eaa22084366a"),
         to_chunk(base16_literal("0db414c859a07e8205876354a210a75042d0463404913d61a8e068e58a3ae2aa080026")));
 
@@ -3472,7 +3472,7 @@ BOOST_AUTO_TEST_CASE(match_filter_1__input_prevout__return_true)
 BOOST_AUTO_TEST_CASE(match_filter_1__unrelated_address__return_false)
 {
     const message::compact_filter filter(
-        bc::neutrino_filter_type,
+        nuls::neutrino_filter_type,
         hash_literal("00000000fd3ceb2404ff07a785c7fdcc76619edc8ed61bd25134eaa22084366a"),
         to_chunk(base16_literal("0db414c859a07e8205876354a210a75042d0463404913d61a8e068e58a3ae2aa080026")));
 
@@ -3486,7 +3486,7 @@ BOOST_AUTO_TEST_CASE(match_filter_1__unrelated_address__return_false)
 BOOST_AUTO_TEST_CASE(match_filter_2__input_prevout__return_true)
 {
     const message::compact_filter filter(
-        bc::neutrino_filter_type,
+        nuls::neutrino_filter_type,
         hash_literal("00000000fd3ceb2404ff07a785c7fdcc76619edc8ed61bd25134eaa22084366a"),
         to_chunk(base16_literal("0db414c859a07e8205876354a210a75042d0463404913d61a8e068e58a3ae2aa080026")));
 
@@ -3508,7 +3508,7 @@ BOOST_AUTO_TEST_CASE(match_filter_2__input_prevout__return_true)
 BOOST_AUTO_TEST_CASE(match_filter_2__unrelated_address__return_false)
 {
     const message::compact_filter filter(
-        bc::neutrino_filter_type,
+        nuls::neutrino_filter_type,
         hash_literal("00000000fd3ceb2404ff07a785c7fdcc76619edc8ed61bd25134eaa22084366a"),
         to_chunk(base16_literal("0db414c859a07e8205876354a210a75042d0463404913d61a8e068e58a3ae2aa080026")));
 

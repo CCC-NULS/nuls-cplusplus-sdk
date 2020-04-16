@@ -28,7 +28,7 @@ namespace libnuls {
 namespace system {
 namespace wallet {
 
-using namespace bc::system::chain;
+using namespace nuls::system::chain;
 
 void select_outputs::greedy(points_value& out, const points_value& unspent,
     uint64_t minimum_value)

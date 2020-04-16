@@ -35,7 +35,7 @@ namespace libnuls {
 namespace system {
 namespace wallet {
 
-using namespace bc::system::machine;
+using namespace nuls::system::machine;
 
 const uint8_t payment_address::mainnet_p2kh = 0x00;
 const uint8_t payment_address::mainnet_p2sh = 0x05;

@@ -32,8 +32,8 @@ namespace libnuls {
 namespace system {
 namespace chain {
 
-using namespace bc::system::wallet;
-using namespace bc::system::machine;
+using namespace nuls::system::wallet;
+using namespace nuls::system::machine;
 
 // Constructors.
 //-----------------------------------------------------------------------------

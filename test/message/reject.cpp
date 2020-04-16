@@ -21,7 +21,7 @@
 #include <string>
 #include <nuls/system.hpp>
 
-using namespace bc::system;
+using namespace nuls::system;
 
 // /Satoshi:0.12.1/
 // Invalid reject payload from [46.101.110.115:8333] bad data stream

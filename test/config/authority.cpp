@@ -21,8 +21,8 @@
 #include <boost/test/unit_test.hpp>
 #include <nuls/system.hpp>
 
-using namespace bc::system;
-using namespace bc::system::config;
+using namespace nuls::system;
+using namespace nuls::system::config;
 using namespace boost::program_options;
 
 BOOST_AUTO_TEST_SUITE(authority_tests)

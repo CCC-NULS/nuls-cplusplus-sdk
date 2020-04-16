@@ -39,9 +39,9 @@ namespace libnuls {
 namespace system {
 
 using namespace pt;
-using namespace bc::system::config;
-using namespace bc::system::machine;
-using namespace bc::system::wallet;
+using namespace nuls::system::config;
+using namespace nuls::system::machine;
+using namespace nuls::system::wallet;
 using namespace boost::iostreams;
 
 // property_tree is very odd in that what one might consider a node or element,

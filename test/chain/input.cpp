@@ -20,8 +20,8 @@
 #include <nuls/system.hpp>
 
 using namespace bc;
-using namespace bc::system;
-using namespace bc::system::chain;
+using namespace nuls::system;
+using namespace nuls::system::chain;
 
 data_chunk valid_raw_input = to_chunk(base16_literal(
     "54b755c39207d443fd96a8d12c94446a1c6f66e39c95e894c23418d7501f681b01000"

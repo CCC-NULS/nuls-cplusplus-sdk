@@ -89,12 +89,12 @@ public:
 };
 
 /**
- * Use bc::system::signing.context() to obtain the secp256k1 signing context.
+ * Use nuls::system::signing.context() to obtain the secp256k1 signing context.
  */
 extern secp256k1_signing signing;
 
 /**
- * Use bc::system::verification.context() to obtain the secp256k1 verification
+ * Use nuls::system::verification.context() to obtain the secp256k1 verification
  * context.
  */
 extern secp256k1_verification verification;

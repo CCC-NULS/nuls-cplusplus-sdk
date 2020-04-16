@@ -27,7 +27,7 @@ namespace system {
 } // namespace system
 } // namespace libnuls
 
-namespace bc = libnuls;
+namespace nuls = libnuls;
 
 // See http://gcc.gnu.org/wiki/Visibility
 

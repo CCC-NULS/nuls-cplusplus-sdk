@@ -170,9 +170,9 @@ BC_API long_hash pkcs5_pbkdf2_hmac_sha512(const data_slice& passphrase,
 namespace std
 {
 template <size_t Size>
-struct hash<bc::system::byte_array<Size>>
+struct hash<nuls::system::byte_array<Size>>
 {
-    size_t operator()(const bc::system::byte_array<Size>& hash) const
+    size_t operator()(const nuls::system::byte_array<Size>& hash) const
     {
         return boost::hash_range(hash.begin(), hash.end());
     }
@@ -182,9 +182,9 @@ struct hash<bc::system::byte_array<Size>>
 namespace boost
 {
 template <size_t Size>
-struct hash<bc::system::byte_array<Size>>
+struct hash<nuls::system::byte_array<Size>>
 {
-    size_t operator()(const bc::system::byte_array<Size>& hash) const
+    size_t operator()(const nuls::system::byte_array<Size>& hash) const
     {
         return boost::hash_range(hash.begin(), hash.end());
     }

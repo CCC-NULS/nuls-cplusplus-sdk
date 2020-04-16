@@ -32,8 +32,8 @@
 namespace libnuls {
 namespace system {
 
-using namespace bc::system::chain;
-using namespace bc::system::machine;
+using namespace nuls::system::chain;
+using namespace nuls::system::machine;
 
 bool is_stealth_script(const script& script)
 {

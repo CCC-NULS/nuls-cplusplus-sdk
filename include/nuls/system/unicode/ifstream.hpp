@@ -27,7 +27,7 @@ namespace libnuls {
 namespace system {
 
 /**
- * Use bc::system::ifstream in place of std::ifstream.
+ * Use nuls::system::ifstream in place of std::ifstream.
  * This provides utf8 to utf16 path translation for Windows.
  */
 class BC_API ifstream
@@ -35,7 +35,7 @@ class BC_API ifstream
 {
 public:
     /**
-     * Construct bc::system::ifstream.
+     * Construct nuls::system::ifstream.
      * @param[in]  path  The utf8 path to the file.
      * @param[in]  mode  The file opening mode.
      */

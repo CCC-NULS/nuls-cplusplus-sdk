@@ -19,9 +19,9 @@
 #include <boost/test/unit_test.hpp>
 #include <nuls/system.hpp>
 
-using namespace bc::system;
-using namespace bc::system::chain;
-using namespace bc::system::wallet;
+using namespace nuls::system;
+using namespace nuls::system::chain;
+using namespace nuls::system::wallet;
 
 BOOST_AUTO_TEST_SUITE(witness_address_tests)
 

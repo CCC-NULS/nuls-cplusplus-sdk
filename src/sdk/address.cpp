@@ -16,7 +16,7 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include <nuls/system/wallet/witness_address.hpp>
+#include <nuls/system/sdk/address.hpp>
 
 #include <algorithm>
 #include <cstdint>
@@ -33,24 +33,24 @@
 
 namespace libnuls {
 namespace system {
-namespace wallet {
+namespace sdk {
 
 using namespace nuls::system::machine;
 
-const std::string witness_address::mainnet_prefix = "NULS";
-const std::string witness_address::testnet_prefix = "tNULS";
+const std::string address::mainnet_prefix = "NULS";
+const std::string address::testnet_prefix = "tNULS";
 
 const size_t bech32_contracted_bit_size = 5;
 const size_t bech32_expanded_bit_size = 8;
 
-witness_address::witness_address()
+address::address()
   : payment_address(),
     witness_version_(0),
     witness_hash_(null_hash)
 {
 }
 
-witness_address::witness_address(witness_address&& other)
+address::address(address&& other)
   : payment_address(other),
     prefix_(other.prefix_),
     format_(other.format_),
@@ -59,7 +59,7 @@ witness_address::witness_address(witness_address&& other)
 {
 }
 
-witness_address::witness_address(const witness_address& other)
+address::address(const address& other)
   : payment_address(other),
     prefix_(other.prefix_),
     format_(other.format_),
@@ -67,31 +67,31 @@ witness_address::witness_address(const witness_address& other)
 {
 }
 
-witness_address::witness_address(const std::string& address,
+address::address(const std::string& addr,
     address_format format)
-  : witness_address(from_string(address, format))
+  : address(from_string(addr, format))
 {
 }
 
-witness_address::witness_address(const ec_private& secret,
+address::address(const wallet::ec_private& secret,
     address_format format, const std::string& prefix)
-  : witness_address(from_private(secret, format, prefix))
+  : address(from_private(secret, format, prefix))
 {
 }
 
-witness_address::witness_address(const ec_public& point, address_format format,
+address::address(const wallet::ec_public& point, address_format format,
     const std::string& prefix)
-  : witness_address(from_public(point, format, prefix))
+  : address(from_public(point, format, prefix))
 {
 }
 
-witness_address::witness_address(const chain::script& script,
+address::address(const chain::script& script,
     address_format format, const std::string& prefix)
-  : witness_address(from_script(script, format, prefix))
+  : address(from_script(script, format, prefix))
 {
 }
 
-witness_address::witness_address(short_hash&& hash, address_format format,
+address::address(short_hash&& hash, address_format format,
     uint8_t witness_version, const std::string& prefix)
   : payment_address(std::move(hash)),
     prefix_(prefix),
@@ -101,7 +101,7 @@ witness_address::witness_address(short_hash&& hash, address_format format,
 {
 }
 
-witness_address::witness_address(const short_hash& hash, address_format format,
+address::address(const short_hash& hash, address_format format,
     uint8_t witness_version, const std::string& prefix)
   : payment_address(hash),
     prefix_(prefix),
@@ -111,7 +111,7 @@ witness_address::witness_address(const short_hash& hash, address_format format,
 {
 }
 
-witness_address::witness_address(hash_digest&& hash, address_format format,
+address::address(hash_digest&& hash, address_format format,
     uint8_t witness_version, const std::string& prefix)
   : payment_address(null_short_hash),
     prefix_(prefix),
@@ -121,7 +121,7 @@ witness_address::witness_address(hash_digest&& hash, address_format format,
 {
 }
 
-witness_address::witness_address(const hash_digest& hash, address_format format,
+address::address(const hash_digest& hash, address_format format,
     uint8_t witness_version, const std::string& prefix)
   : payment_address(null_short_hash),
     prefix_(prefix),
@@ -134,7 +134,7 @@ witness_address::witness_address(const hash_digest& hash, address_format format,
 // Factories.
 // ----------------------------------------------------------------------------
 // static
-witness_address witness_address::from_string(const std::string& address,
+address address::from_string(const std::string& addr,
     address_format format, const std::string& prefix)
 {
     // BIP 141 constants
@@ -153,14 +153,14 @@ witness_address witness_address::from_string(const std::string& address,
 
     // Attempt to decode BIP 173 address format.
     base32 bech32_decoded;
-    if (!decode_base32(bech32_decoded, address))
+    if (!decode_base32(bech32_decoded, addr))
         return {};
 
     const uint8_t witness_version = bech32_decoded.payload.front();
 
     // Checks specific to witness version 0.
-    if (witness_version == 0 && (address.size() < witness_pubkey_hash_size ||
-        address.size() > witness_script_hash_size))
+    if (witness_version == 0 && (addr.size() < witness_pubkey_hash_size ||
+        addr.size() > witness_script_hash_size))
         return {};
 
     // Verify witness version is valid (only version 0 is
@@ -169,11 +169,11 @@ witness_address witness_address::from_string(const std::string& address,
         return {};
 
     // Verify additional properties (BIP173 decoding).
-    if (address.size() < bech32_address_min_size ||
-        address.size() > bech32_address_max_size)
+    if (addr.size() < bech32_address_min_size ||
+        addr.size() > bech32_address_max_size)
         return {};
 
-    const auto address_mod = address.size() % bech32_address_size_modulo;
+    const auto address_mod = addr.size() % bech32_address_size_modulo;
     if (address_mod == bech32_address_modulo_invalid_1 ||
         address_mod == bech32_address_modulo_invalid_2 ||
         address_mod == bech32_address_modulo_invalid_3)
@@ -197,15 +197,15 @@ witness_address witness_address::from_string(const std::string& address,
 }
 
 // static
-witness_address witness_address::from_private(const ec_private& secret,
+address address::from_private(const wallet::ec_private& secret,
     address_format format, const std::string& prefix)
 {
-    return secret ? witness_address(secret.to_public(), format, prefix)
-        : witness_address{};
+    return secret ? address(secret.to_public(), format, prefix)
+        : address{};
 }
 
 // static
-witness_address witness_address::from_public(const ec_public& point,
+address address::from_public(const wallet::ec_public& point,
     address_format format, const std::string& prefix)
 {
     if (!point)
@@ -219,12 +219,12 @@ witness_address witness_address::from_public(const ec_public& point,
     const uint8_t version = 0;
 
     return format == address_format::witness_pubkey_hash ?
-        witness_address(bitcoin_short_hash(data), format, version, prefix) :
-        witness_address(bitcoin_hash(data), format, version, prefix);
+        address(bitcoin_short_hash(data), format, version, prefix) :
+        address(bitcoin_hash(data), format, version, prefix);
 }
 
 // static
-witness_address witness_address::from_script(const chain::script& script,
+address address::from_script(const chain::script& script,
     address_format format, const std::string& prefix)
 {
     // Witness version.
@@ -232,14 +232,14 @@ witness_address witness_address::from_script(const chain::script& script,
     const auto key = script.to_payments_key();
 
     return format == address_format::witness_pubkey_hash ?
-        witness_address(ripemd160_hash(key), format, version, prefix) :
-        witness_address(key, format, version, prefix);
+        address(ripemd160_hash(key), format, version, prefix) :
+        address(key, format, version, prefix);
 }
 
 // Cast operators.
 // ----------------------------------------------------------------------------
 
-witness_address::operator bool() const
+address::operator bool() const
 {
     return valid_;
 }
@@ -248,7 +248,7 @@ witness_address::operator bool() const
 // ----------------------------------------------------------------------------
 
 // Returns the bech32 encoded witness address.
-std::string witness_address::encoded() const
+std::string address::encoded() const
 {
     const size_t conversion_offset = 0;
 
@@ -270,17 +270,17 @@ std::string witness_address::encoded() const
 // Accessors.
 // ----------------------------------------------------------------------------
 
-uint8_t witness_address::witness_version() const
+uint8_t address::witness_version() const
 {
     return witness_version_;
 }
 
-const hash_digest& witness_address::witness_hash() const
+const hash_digest& address::witness_hash() const
 {
     return witness_hash_;
 }
 
-chain::script witness_address::output_script() const
+chain::script address::output_script() const
 {
     return format_ == address_format::witness_pubkey_hash ?
         chain::script::to_pay_witness_key_hash_pattern(hash_) :
@@ -290,7 +290,7 @@ chain::script witness_address::output_script() const
 // Operators.
 // ----------------------------------------------------------------------------
 
-witness_address& witness_address::operator=(const witness_address& other)
+address& address::operator=(const address& other)
 {
     valid_ = other.valid_;
     hash_ = other.hash_;
@@ -301,12 +301,12 @@ witness_address& witness_address::operator=(const witness_address& other)
     return *this;
 }
 
-bool witness_address::operator<(const witness_address& other) const
+bool address::operator<(const address& other) const
 {
     return encoded() < other.encoded();
 }
 
-bool witness_address::operator==(const witness_address& other) const
+bool address::operator==(const address& other) const
 {
     return valid_ == other.valid_
         && version_ == other.version_
@@ -317,16 +317,16 @@ bool witness_address::operator==(const witness_address& other) const
         && witness_hash_ == other.witness_hash_;
 }
 
-bool witness_address::operator!=(const witness_address& other) const
+bool address::operator!=(const address& other) const
 {
     return !(*this == other);
 }
 
-std::istream& operator>>(std::istream& in, witness_address& to)
+std::istream& operator>>(std::istream& in, address& to)
 {
     std::string value;
     in >> value;
-    to = witness_address(value);
+    to = address(value);
 
     if (!to)
     {
@@ -337,14 +337,14 @@ std::istream& operator>>(std::istream& in, witness_address& to)
     return in;
 }
 
-std::ostream& operator<<(std::ostream& out, const witness_address& of)
+std::ostream& operator<<(std::ostream& out, const address& of)
 {
     out << of.encoded();
     return out;
 }
 
 // static
-data_chunk witness_address::convert_bits(uint32_t from_bits, uint32_t to_bits,
+data_chunk address::convert_bits(uint32_t from_bits, uint32_t to_bits,
     bool pad, const data_chunk& in, size_t in_offset)
 {
     const uint32_t maximum = (1 << to_bits) - 1;
@@ -380,6 +380,6 @@ data_chunk witness_address::convert_bits(uint32_t from_bits, uint32_t to_bits,
     return out;
 }
 
-} // namespace wallet
+} // namespace sdk
 } // namespace system
 } // namespace libnuls

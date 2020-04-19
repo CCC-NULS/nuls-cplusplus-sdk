@@ -54,7 +54,7 @@ add_library(NULS SHARED ${sources})
 # add_library(NULS ${sources})
 
 target_link_libraries(NULS PRIVATE Boost::boost)
-add_dependencies(NULS nlohmann_json pcg)
+add_dependencies(NULS nlohmann_json pcg secp256k1)
 
 target_include_directories(NULS
     PUBLIC

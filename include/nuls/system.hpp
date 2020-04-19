@@ -229,4 +229,9 @@
 #include <nuls/system/wallet/uri_reader.hpp>
 #include <nuls/system/wallet/witness_address.hpp>
 
+#include <nuls/system/sdk/address.hpp>
+#include <nuls/system/sdk/NulsSDKTool.hpp>
+
+#include <nuls/system/model/account.hpp>
+
 #endif

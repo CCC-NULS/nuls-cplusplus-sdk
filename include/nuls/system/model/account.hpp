@@ -40,6 +40,14 @@ private:
     std::string encryptedPrivateKey;
 
 public:
+    account(std::string address, std::string pubKey, std::string prikey, std::string encryptedPrivateKey)
+    {
+        setAddress(address);
+        setEncryptedPrivateKey(encryptedPrivateKey);
+        setPubKey(pubKey);
+        setPrikey(prikey);
+    }
+    
     std::string getAddress()
     {
         return address;

@@ -20,6 +20,7 @@
 #include <regex>
 
 #include <nuls/system/sdk/NulsSDKTool.hpp>
+#include <nuls/system/sdk/address.hpp>
 #include <nuls/system/wallet/encrypted_keys.hpp>
 #include <nuls/system/utility/pseudo_random.hpp>
 #include <nuls/system/formats/base_58.hpp>
@@ -27,8 +28,6 @@
 namespace libnuls {
 namespace system {
 namespace sdk {
-
-uint8_t op_assign(char ch) { return static_cast<uint8_t>(ch); }
 
 std::vector<model::account> NulsSDKTool::createOffLineAccount(int count, std::string prefix, std::string password)
 {
@@ -45,51 +44,24 @@ std::vector<model::account> NulsSDKTool::createOffLineAccount(int count, std::st
 
     bool ret;
     wallet::encrypted_token token;
-    std::transform(password.begin(), password.end(), token.begin(), op_assign);
+    std::copy(password.begin(), password.end(), token.begin());
     wallet::encrypted_private out_private;
     ec_compressed out_point;
+    wallet::encrypted_public out_pubkey;
     wallet::ek_seed seed;
     pseudo_random::fill(seed);
 
     for (int i = 0; i < count; i++) 
     {
-        ret = wallet::create_key_pair(out_private, out_point, token, seed, 0);
-        if (false == ret){
+        ret = wallet::create_key_pair(out_private, out_pubkey, out_point, token, seed, 0);
+        if (false == ret)
+        {
             break;
         }
-
-
-#if 0
-        Account account;
-        if (StringUtils.isBlank(prefix))
-        {
-            account = AccountTool.createAccount(SDKContext.main_chain_id);
-        }
-        else
-        {
-            account = AccountTool.createAccount(SDKContext.main_chain_id, null, prefix);
-        }
-        if (StringUtils.isNotBlank(password))
-        {
-            account.encrypt(password);
-        }
-        AccountDto accountDto = new AccountDto();
-        accountDto.setAddress(account.getAddress().toString());
-        accountDto.setPubKey(HexUtil.encode(account.getPubKey()));
-        if (account.isEncrypted())
-        {
-            accountDto.setPrikey("");
-            accountDto.setEncryptedPrivateKey(HexUtil.encode(account.getEncryptedPriKey()));
-        }
-        else
-        {
-            accountDto.setPrikey(HexUtil.encode(account.getPriKey()));
-            accountDto.setEncryptedPrivateKey("");
-        }
-        list.add(accountDto);
-#endif        
+        address addr = address(1, prefix, 1, bitcoin_short_hash(out_point));
+        model::account acc = model::account(addr.to_string(), encode_base16(out_pubkey), encode_base16(out_private), encode_base16(out_private));
+        list.push_back(acc);      
     }
-
     return list;
 }
 

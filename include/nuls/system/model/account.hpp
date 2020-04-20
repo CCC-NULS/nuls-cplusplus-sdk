@@ -87,6 +87,7 @@ public:
     {
         encryptedPrivateKey = other;
     }
+
 };
 } // namespace model
 } // namespace system

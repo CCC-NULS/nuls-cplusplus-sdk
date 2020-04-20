@@ -45,8 +45,8 @@ std::vector<model::account> NulsSDKTool::createOffLineAccount(int count, std::st
     bool ret;
     wallet::encrypted_token token;
     std::copy(password.begin(), password.end(), token.begin());
-    wallet::encrypted_private out_private;
     ec_compressed out_point;
+    wallet::encrypted_private out_private; 
     wallet::encrypted_public out_pubkey;
     wallet::ek_seed seed;
     pseudo_random::fill(seed);
@@ -59,10 +59,17 @@ std::vector<model::account> NulsSDKTool::createOffLineAccount(int count, std::st
             break;
         }
         address addr = address(1, prefix, 1, bitcoin_short_hash(out_point));
-        model::account acc = model::account(addr.to_string(), encode_base16(out_pubkey), encode_base16(out_private), encode_base16(out_private));
+
+        model::account acc = model::account(addr.to_string(), encode_base16(out_point), 
+                                            encode_base16(out_private), encode_base16(out_private));
         list.push_back(acc);      
     }
     return list;
+}
+
+std::vector<model::account> NulsSDKTool::createOffLineAccount(int count, std::string password)
+{
+    return createOffLineAccount(count, NULL, password);
 }
 
 

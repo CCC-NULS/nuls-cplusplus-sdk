@@ -38,6 +38,8 @@ class BC_API NulsSDKTool {
 
 public:
     static std::vector<model::account> createOffLineAccount(int count, std::string prefix, std::string password);
+    static std::vector<model::account> createOffLineAccount(int count, std::string password);
+    
 
 private:
 

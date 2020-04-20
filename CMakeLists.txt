@@ -67,4 +67,6 @@ target_include_directories(NULS
         ${SECP256K1_INCLUDE_DIR}
 )
 
+#add_definitions(-DWITH_ICU)
+
 #add_subdirectory(tests)

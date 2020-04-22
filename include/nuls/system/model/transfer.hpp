@@ -17,34 +17,41 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef LIBNULS_SYSTEM_SDK_NULSSDKTOOL_HPP
-#define LIBNULS_SYSTEM_SDK_NULSSDKTOOL_HPP
+#ifndef LIBNULS_SYSTEM_MODEL_TRANSFER_HPP
+#define LIBNULS_SYSTEM_MODEL_TRANSFER_HPP
 
 #include <algorithm>
 #include <iostream>
 #include <cstdint>
 #include <memory>
 #include <string>
-#include <cstddef>
-#include <vector>
 #include <nuls/system/define.hpp>
-#include <nuls/system/model/account.hpp>
-#include <nuls/system/model/transfer.hpp>
+#include <nuls/system/model/coinfrom.hpp>
+#include <nuls/system/model/cointo.hpp>
+
 
 namespace libnuls {
 namespace system {
-namespace sdk {
+namespace model {
 
-class BC_API NulsSDKTool {
-
-public:
-    static std::vector<model::account> createOffLineAccount(int count, std::string prefix, std::string password);
-    static std::vector<model::account> createOffLineAccount(int count, std::string password);
-    static int createTransferTx(model::transfer transfer);
+class BC_API transfer {
 
 private:
+    std::vector<coinfrom> coinfroms;
+    std::vector<cointo> cointos;  
+    uint64_t time;
+    std::string remark;
 
-    static bool validPassword(std::string password);       
+
+public:
+    transfer(std::vector<coinfrom> coinFroms, std::vector<cointo> coinTos, uint64_t Time, std::string Remark)
+        : coinfroms(coinFroms), cointos(coinTos), time(Time), remark(Remark)
+    {
+
+    }
+    
+    
+
 };
 } // namespace model
 } // namespace system

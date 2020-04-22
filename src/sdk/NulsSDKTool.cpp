@@ -72,7 +72,14 @@ std::vector<model::account> NulsSDKTool::createOffLineAccount(int count, std::st
     return createOffLineAccount(count, NULL, password);
 }
 
+int NulsSDKTool::createTransferTx(model::transfer transfer)
+{
 
+
+
+}
+
+//static
 bool NulsSDKTool::validPassword(std::string password)
 {
     if (password.empty())

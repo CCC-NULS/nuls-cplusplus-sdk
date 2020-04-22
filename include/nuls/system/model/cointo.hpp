@@ -17,34 +17,37 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef LIBNULS_SYSTEM_SDK_NULSSDKTOOL_HPP
-#define LIBNULS_SYSTEM_SDK_NULSSDKTOOL_HPP
+#ifndef LIBNULS_SYSTEM_MODEL_COINTO_HPP
+#define LIBNULS_SYSTEM_MODEL_COINTO_HPP
 
 #include <algorithm>
 #include <iostream>
 #include <cstdint>
 #include <memory>
 #include <string>
-#include <cstddef>
-#include <vector>
 #include <nuls/system/define.hpp>
-#include <nuls/system/model/account.hpp>
-#include <nuls/system/model/transfer.hpp>
 
 namespace libnuls {
 namespace system {
-namespace sdk {
+namespace model {
 
-class BC_API NulsSDKTool {
-
-public:
-    static std::vector<model::account> createOffLineAccount(int count, std::string prefix, std::string password);
-    static std::vector<model::account> createOffLineAccount(int count, std::string password);
-    static int createTransferTx(model::transfer transfer);
+class BC_API cointo {
 
 private:
+    std::string address;
+    int assetsChainId;
+    int assetsId;
+    std::string amount;
+    uint64_t lockTime;
 
-    static bool validPassword(std::string password);       
+public:
+    cointo(std::string addressTo, int chainId, int assetsID, std::string Amount, uint64_t LockTime)
+        : address(addressTo), assetsChainId(chainId), assetsId(assetsID), amount(Amount), lockTime(LockTime)
+    {
+
+    }
+    
+
 };
 } // namespace model
 } // namespace system

@@ -17,34 +17,40 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef LIBNULS_SYSTEM_SDK_NULSSDKTOOL_HPP
-#define LIBNULS_SYSTEM_SDK_NULSSDKTOOL_HPP
+#ifndef LIBNULS_SYSTEM_MODEL_COINFROM_HPP
+#define LIBNULS_SYSTEM_MODEL_COINFROM_HPP
 
 #include <algorithm>
 #include <iostream>
 #include <cstdint>
 #include <memory>
 #include <string>
-#include <cstddef>
-#include <vector>
 #include <nuls/system/define.hpp>
-#include <nuls/system/model/account.hpp>
-#include <nuls/system/model/transfer.hpp>
 
 namespace libnuls {
 namespace system {
-namespace sdk {
+namespace model {
 
-class BC_API NulsSDKTool {
-
-public:
-    static std::vector<model::account> createOffLineAccount(int count, std::string prefix, std::string password);
-    static std::vector<model::account> createOffLineAccount(int count, std::string password);
-    static int createTransferTx(model::transfer transfer);
+class BC_API coinfrom {
 
 private:
+    std::string address;
+    int assetsChainId;
+    int assetsId;
+    std::string amount;
+    std::string nonce;
+    uint8_t locked;
 
-    static bool validPassword(std::string password);       
+
+public:
+    coinfrom(std::string addressFrom, int chainId, int assetsID, std::string Amount, std::string Nonce, uint8_t Locked)
+        : address(addressFrom), assetsChainId(chainId), assetsId(assetsID), amount(Amount), nonce(Nonce), locked(Locked)
+    {
+
+    }
+    
+    
+
 };
 } // namespace model
 } // namespace system
